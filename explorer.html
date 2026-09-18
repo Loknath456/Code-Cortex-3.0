@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIN-XR — Transaction Explorer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#050B10',
+              surface: '#0B131D',
+              surfaceElevated: '#121D2B',
+              surfaceHighlight: '#1A293B',
+              border: '#1E2D40',
+              teal: '#20E6C2',
+              cyan: '#00B4D8',
+              blue: '#3B82F6',
+              success: '#10B981',
+              warning: '#F59E0B',
+              highRisk: '#F97316',
+              critical: '#EF4444',
+              textPrimary: '#F8FAFC',
+              textSecondary: '#94A3B8',
+              textMuted: '#64748B'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .clean-card {
+      background: rgba(11, 19, 29, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(30, 45, 64, 0.8);
+      border-radius: 16px;
+    }
+    .clean-panel {
+      background: rgba(11, 19, 29, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(30, 45, 64, 0.9);
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-textPrimary font-sans antialiased min-h-screen">
+
+  <div class="min-h-screen flex relative z-10">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="w-64 bg-brand-surface border-r border-brand-border flex flex-col justify-between shrink-0">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-10 cursor-pointer" onclick="location.href='dashboard.html'">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-black font-mono shadow-md">XR</div>
+          <div>
+            <span class="text-xl font-black tracking-wider text-white">FIN-XR</span>
+            <span class="block text-[10px] font-mono text-brand-teal uppercase tracking-widest font-bold">INTELLIGENCE</span>
+          </div>
+        </div>
+
+        <nav class="space-y-1.5">
+          <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">Core Modules</div>
+          
+          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Dashboard</span>
+          </a>
+          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-brand-teal/20 text-brand-teal border-l-4 border-brand-teal">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i><span>Transaction Explorer</span>
+          </a>
+          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="network" class="w-4 h-4"></i><span>Account Patterns</span>
+            <span class="ml-auto text-[9px] font-mono bg-brand-teal/20 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
+          </a>
+          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="shield-alert" class="w-4 h-4"></i><span>Risk Investigation</span>
+            <span class="ml-auto text-[10px] bg-brand-highRisk/20 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">237</span>
+          </a>
+          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="file-text" class="w-4 h-4"></i><span>Reports & Analytics</span>
+          </a>
+
+          <div class="pt-6 border-t border-brand-border my-4"></div>
+          <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">System</div>
+
+          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="settings" class="w-4 h-4"></i><span>Settings & Profile</span>
+          </a>
+          <a href="design-system.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="palette" class="w-4 h-4"></i><span>Design System</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="p-4 border-t border-brand-border bg-brand-surfaceElevated/40">
+        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-brand-surfaceElevated transition cursor-pointer" onclick="location.href='settings.html'">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-bold text-xs ring-2 ring-brand-teal/40">AM</div>
+          <div class="overflow-hidden">
+            <div class="text-xs font-bold text-white truncate">Alex Morgan</div>
+            <div class="text-[10px] text-brand-teal truncate font-mono">Senior Risk Analyst</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN BODY -->
+    <div class="flex-1 flex flex-col overflow-hidden bg-brand-bg">
+      
+      <header class="h-16 bg-brand-surface/80 border-b border-brand-border px-8 flex items-center justify-between shrink-0 glass-panel z-20">
+        <div class="flex items-center space-x-2 text-xs font-mono text-brand-textMuted">
+          <span class="text-white font-semibold">FIN-XR</span><span>/</span>
+          <span class="text-brand-teal font-bold">Transaction Explorer</span>
+        </div>
+
+        <div class="w-96 relative hidden md:block">
+          <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3 text-brand-textMuted"></i>
+          <input type="text" placeholder="Search accounts, transaction IDs..." class="w-full bg-brand-surface border border-brand-border rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-brand-textMuted focus:outline-none focus:border-brand-teal transition">
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button class="relative p-2.5 rounded-xl bg-brand-surface border border-brand-border text-brand-textSecondary hover:text-white transition">
+            <i data-lucide="bell" class="w-4 h-4"></i>
+            <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-brand-critical"></span>
+          </button>
+          <span class="px-3 py-1 rounded-full bg-brand-highRisk/10 text-brand-highRisk border border-brand-highRisk/30 text-xs font-mono font-bold">237 Risk Alerts</span>
+        </div>
+      </header>
+
+      <main class="flex-1 overflow-y-auto p-8 lg:p-10 space-y-8">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h1 class="text-3xl font-extrabold text-white tracking-tight">Transaction Explorer</h1>
+            <p class="text-xs text-brand-textSecondary mt-1">Search, filter and investigate financial activity across monitored accounts.</p>
+          </div>
+          <div class="flex items-center space-x-3">
+            <button onclick="resetExplorerFilters()" class="px-4 py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-textSecondary hover:text-white transition">Reset Filters</button>
+            <button onclick="alert('Exporting CSV')" class="px-5 py-2.5 rounded-xl bg-brand-teal text-brand-bg font-bold hover:bg-brand-teal/90 transition text-xs flex items-center space-x-2">
+              <i data-lucide="download" class="w-4 h-4"></i><span>Export CSV</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- SEARCH & FILTERS -->
+        <div class="clean-panel p-6 space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div class="lg:col-span-2 relative">
+              <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3.5 text-brand-textMuted"></i>
+              <input type="text" id="txSearchInput" placeholder="Search account, transaction ID..." class="w-full bg-brand-surface border border-brand-border rounded-xl pl-10 pr-4 py-2.5 text-xs text-white focus:border-brand-teal focus:outline-none">
+            </div>
+
+            <div>
+              <select id="filterType" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-2.5 text-xs text-brand-textSecondary focus:border-brand-teal focus:outline-none">
+                <option value="ALL">All Types</option>
+                <option value="Debit">Debit</option>
+                <option value="Deposit">Deposit</option>
+                <option value="Transfer">Transfer</option>
+              </select>
+            </div>
+
+            <div>
+              <select id="filterRisk" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-2.5 text-xs text-brand-textSecondary focus:border-brand-teal focus:outline-none">
+                <option value="ALL">All Risk Levels</option>
+                <option value="High">High Risk (>75)</option>
+                <option value="Normal">Normal (<40)</option>
+              </select>
+            </div>
+
+            <div>
+              <button onclick="filterTransactions()" class="w-full bg-brand-teal text-brand-bg font-bold py-2.5 rounded-xl text-xs hover:bg-brand-teal/90 transition flex items-center justify-center space-x-2">
+                <i data-lucide="filter" class="w-4 h-4"></i><span>Apply Filters</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABLE CONTAINER -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <div id="txTableContainer" class="lg:col-span-12 clean-panel overflow-hidden transition-all duration-300">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-brand-surface text-brand-textMuted uppercase font-mono text-[10px] border-b border-brand-border">
+                  <tr>
+                    <th class="py-4 px-6">Date & Time</th>
+                    <th class="py-4 px-6">Transaction ID</th>
+                    <th class="py-4 px-6">Account ID</th>
+                    <th class="py-4 px-6">Details</th>
+                    <th class="py-4 px-6">Deposit</th>
+                    <th class="py-4 px-6">Withdrawal</th>
+                    <th class="py-4 px-6">Balance</th>
+                    <th class="py-4 px-6">Pattern Status</th>
+                    <th class="py-4 px-6 text-right">Risk Score</th>
+                  </tr>
+                </thead>
+                <tbody id="txExplorerTableBody" class="divide-y divide-brand-border text-brand-textSecondary font-mono">
+                  <!-- JS Populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- SLIDE OVER DRAWER -->
+          <div id="txDetailDrawer" class="hidden lg:col-span-4 clean-panel p-6 space-y-6 sticky top-20 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-brand-border pb-4">
+              <div>
+                <span class="text-[10px] uppercase font-mono text-brand-teal font-bold">Transaction Detail</span>
+                <h3 id="drawerTxId" class="text-xl font-extrabold text-white">TX10291</h3>
+              </div>
+              <button onclick="closeTxDrawer()" class="text-brand-textMuted hover:text-white p-1.5 rounded-lg hover:bg-brand-surface">
+                <i data-lucide="x" class="w-5 h-5"></i>
+              </button>
+            </div>
+
+            <div class="space-y-4 text-xs">
+              <div class="flex justify-between py-1.5 border-b border-brand-border/50">
+                <span class="text-brand-textMuted">Account ID</span>
+                <span id="drawerAccId" class="font-bold text-brand-teal font-mono">ACC7843</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-brand-border/50">
+                <span class="text-brand-textMuted">Date & Time</span>
+                <span id="drawerDate" class="text-white font-mono">18 Sep 2026, 10:24 AM</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-brand-border/50">
+                <span class="text-brand-textMuted">Amount</span>
+                <span id="drawerAmount" class="font-bold text-white font-mono text-sm">₹85,000</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-brand-border/50">
+                <span class="text-brand-textMuted">Pattern Status</span>
+                <span id="drawerDeviation" class="text-brand-highRisk font-bold">Off-Hours Spike (+420%)</span>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <a href="patterns.html" class="w-full py-3 rounded-xl bg-brand-teal text-brand-bg font-bold text-xs hover:bg-brand-teal/90 transition flex items-center justify-center space-x-2">
+                <i data-lucide="network" class="w-4 h-4"></i><span>Analyze Pattern</span>
+              </a>
+              <a href="investigation.html" class="w-full py-3 rounded-xl bg-brand-surface hover:bg-brand-surfaceElevated border border-brand-border text-xs text-white transition flex items-center justify-center space-x-2">
+                <i data-lucide="shield-alert" class="w-4 h-4 text-brand-highRisk"></i><span>Investigate Risk</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    const mockTransactions = [
+      { id: 'TX10291', acc: 'ACC7843', date: '18 Sep 2026, 10:24 AM', details: 'Direct Wire Transfer', deposit: '-', withdrawal: '₹85,000', balance: '₹60,000', status: 'High Deviation', score: 87, type: 'Debit' },
+      { id: 'TX10289', acc: 'ACC9921', date: '18 Sep 2026, 09:12 AM', details: 'Cross-Border Wire', deposit: '-', withdrawal: '₹4,20,000', balance: '₹12,40,000', status: 'Velocity Spike', score: 92, type: 'Transfer' },
+      { id: 'TX10284', acc: 'ACC3314', date: '18 Sep 2026, 08:04 AM', details: 'ATM Cash Withdrawal', deposit: '-', withdrawal: '₹12,500', balance: '₹95,000', status: 'Normal', score: 24, type: 'Debit' },
+      { id: 'TX10280', acc: 'ACC4412', date: '17 Sep 2026, 11:45 PM', details: 'Merchant Deposit', deposit: '₹1,50,000', withdrawal: '-', balance: '₹3,40,000', status: 'Normal Baseline', score: 12, type: 'Deposit' }
+    ];
+
+    function renderTransactionsTable(data) {
+      const tbody = document.getElementById('txExplorerTableBody');
+      tbody.innerHTML = data.map(tx => `
+        <tr class="hover:bg-brand-surfaceElevated/60 transition cursor-pointer" onclick="openTxDrawer('${tx.id}')">
+          <td class="py-4 px-6 text-white">${tx.date}</td>
+          <td class="py-4 px-6 font-bold text-white">${tx.id}</td>
+          <td class="py-4 px-6 text-brand-teal font-bold">${tx.acc}</td>
+          <td class="py-4 px-6 text-brand-textSecondary">${tx.details}</td>
+          <td class="py-4 px-6 text-brand-success font-bold">${tx.deposit}</td>
+          <td class="py-4 px-6 text-brand-highRisk font-bold">${tx.withdrawal}</td>
+          <td class="py-4 px-6 text-white">${tx.balance}</td>
+          <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full ${tx.score > 75 ? 'bg-brand-highRisk/20 text-brand-highRisk' : 'bg-brand-teal/20 text-brand-teal'} font-bold">${tx.status}</span></td>
+          <td class="py-4 px-6 text-right font-bold ${tx.score > 75 ? 'text-brand-critical' : 'text-brand-teal'}">${tx.score}</td>
+        </tr>
+      `).join('');
+    }
+
+    function openTxDrawer(txId) {
+      const tx = mockTransactions.find(t => t.id === txId) || mockTransactions[0];
+      document.getElementById('drawerTxId').innerText = tx.id;
+      document.getElementById('drawerAccId').innerText = tx.acc;
+      document.getElementById('drawerDate').innerText = tx.date;
+      document.getElementById('drawerAmount').innerText = tx.withdrawal !== '-' ? tx.withdrawal : tx.deposit;
+      
+      const drawer = document.getElementById('txDetailDrawer');
+      const tableContainer = document.getElementById('txTableContainer');
+      drawer.classList.remove('hidden');
+      tableContainer.classList.remove('lg:col-span-12');
+      tableContainer.classList.add('lg:col-span-8');
+    }
+
+    function closeTxDrawer() {
+      const drawer = document.getElementById('txDetailDrawer');
+      const tableContainer = document.getElementById('txTableContainer');
+      drawer.classList.add('hidden');
+      tableContainer.classList.remove('lg:col-span-8');
+      tableContainer.classList.add('lg:col-span-12');
+    }
+
+    function filterTransactions() {
+      const search = document.getElementById('txSearchInput').value.toLowerCase();
+      let filtered = mockTransactions.filter(tx => tx.id.toLowerCase().includes(search) || tx.acc.toLowerCase().includes(search));
+      renderTransactionsTable(filtered);
+    }
+
+    function resetExplorerFilters() {
+      document.getElementById('txSearchInput').value = '';
+      renderTransactionsTable(mockTransactions);
+    }
+
+    renderTransactionsTable(mockTransactions);
+  </script>
+</body>
+</html>

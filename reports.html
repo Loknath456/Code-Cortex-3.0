@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIN-XR — Reports & Analytics</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#050B10',
+              surface: '#0B131D',
+              surfaceElevated: '#121D2B',
+              surfaceHighlight: '#1A293B',
+              border: '#1E2D40',
+              teal: '#20E6C2',
+              cyan: '#00B4D8',
+              blue: '#3B82F6',
+              success: '#10B981',
+              warning: '#F59E0B',
+              highRisk: '#F97316',
+              critical: '#EF4444',
+              textPrimary: '#F8FAFC',
+              textSecondary: '#94A3B8',
+              textMuted: '#64748B'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .clean-card {
+      background: rgba(11, 19, 29, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(30, 45, 64, 0.8);
+      border-radius: 16px;
+    }
+    .clean-panel {
+      background: rgba(11, 19, 29, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(30, 45, 64, 0.9);
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-textPrimary font-sans antialiased min-h-screen">
+
+  <div class="min-h-screen flex relative z-10">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="w-64 bg-brand-surface border-r border-brand-border flex flex-col justify-between shrink-0">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-10 cursor-pointer" onclick="location.href='dashboard.html'">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-black font-mono shadow-md">XR</div>
+          <div>
+            <span class="text-xl font-black tracking-wider text-white">FIN-XR</span>
+            <span class="block text-[10px] font-mono text-brand-teal uppercase tracking-widest font-bold">INTELLIGENCE</span>
+          </div>
+        </div>
+
+        <nav class="space-y-1.5">
+          <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">Core Modules</div>
+          
+          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Dashboard</span>
+          </a>
+          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i><span>Transaction Explorer</span>
+          </a>
+          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="network" class="w-4 h-4"></i><span>Account Patterns</span>
+            <span class="ml-auto text-[9px] font-mono bg-brand-teal/20 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
+          </a>
+          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="shield-alert" class="w-4 h-4"></i><span>Risk Investigation</span>
+            <span class="ml-auto text-[10px] bg-brand-highRisk/20 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">237</span>
+          </a>
+          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-brand-teal/20 text-brand-teal border-l-4 border-brand-teal">
+            <i data-lucide="file-text" class="w-4 h-4"></i><span>Reports & Analytics</span>
+          </a>
+
+          <div class="pt-6 border-t border-brand-border my-4"></div>
+          <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">System</div>
+
+          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="settings" class="w-4 h-4"></i><span>Settings & Profile</span>
+          </a>
+          <a href="design-system.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+            <i data-lucide="palette" class="w-4 h-4"></i><span>Design System</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="p-4 border-t border-brand-border bg-brand-surfaceElevated/40">
+        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-brand-surfaceElevated transition cursor-pointer" onclick="location.href='settings.html'">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-bold text-xs ring-2 ring-brand-teal/40">AM</div>
+          <div class="overflow-hidden">
+            <div class="text-xs font-bold text-white truncate">Alex Morgan</div>
+            <div class="text-[10px] text-brand-teal truncate font-mono">Senior Risk Analyst</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN BODY -->
+    <div class="flex-1 flex flex-col overflow-hidden bg-brand-bg">
+      
+      <header class="h-16 bg-brand-surface/80 border-b border-brand-border px-8 flex items-center justify-between shrink-0 glass-panel z-20">
+        <div class="flex items-center space-x-2 text-xs font-mono text-brand-textMuted">
+          <span class="text-white font-semibold">FIN-XR</span><span>/</span>
+          <span class="text-brand-teal font-bold">Reports & Analytics</span>
+        </div>
+
+        <button onclick="alert('Exporting Full Audit Suite')" class="px-5 py-2.5 rounded-xl bg-brand-teal text-brand-bg font-bold hover:bg-brand-teal/90 transition text-xs flex items-center space-x-2">
+          <i data-lucide="download" class="w-4 h-4"></i><span>Download Suite (PDF)</span>
+        </button>
+      </header>
+
+      <main class="flex-1 overflow-y-auto p-8 lg:p-10 space-y-8">
+        
+        <div>
+          <h1 class="text-3xl font-extrabold text-white tracking-tight">Reports & Analytics</h1>
+          <p class="text-xs text-brand-textSecondary mt-1">Turn transaction intelligence into actionable compliance reports.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="clean-card p-6 space-y-4 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-brand-teal/10 text-brand-teal flex items-center justify-center">
+                <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-bold text-white text-sm">Transaction Overview</h3>
+              <p class="text-xs text-brand-textMuted">Monthly volume & deposits breakdown.</p>
+            </div>
+            <button onclick="alert('Generating Report...')" class="w-full py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-teal font-mono">View Report</button>
+          </div>
+
+          <div class="clean-card p-6 space-y-4 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-brand-cyan/10 text-brand-cyan flex items-center justify-center">
+                <i data-lucide="network" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-bold text-white text-sm">Behavioral Pattern Report</h3>
+              <p class="text-xs text-brand-textMuted">Deep baseline deviation analysis.</p>
+            </div>
+            <button onclick="alert('Generating Report...')" class="w-full py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-cyan font-mono">View Report</button>
+          </div>
+
+          <div class="clean-card p-6 space-y-4 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-brand-highRisk/10 text-brand-highRisk flex items-center justify-center">
+                <i data-lucide="shield-alert" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-bold text-white text-sm">Risk Trend Report</h3>
+              <p class="text-xs text-brand-textMuted">Overview of flagged risk alerts.</p>
+            </div>
+            <button onclick="alert('Generating Report...')" class="w-full py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-highRisk font-mono">View Report</button>
+          </div>
+
+          <div class="clean-card p-6 space-y-4 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center">
+                <i data-lucide="user-check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-bold text-white text-sm">Account Intelligence</h3>
+              <p class="text-xs text-brand-textMuted">Individual entity scorecards.</p>
+            </div>
+            <button onclick="alert('Generating Report...')" class="w-full py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-blue font-mono">View Report</button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
