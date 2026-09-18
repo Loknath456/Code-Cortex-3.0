@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FIN-XR — Welcome & Sign In</title>
   
-  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
@@ -23,21 +19,22 @@
         extend: {
           colors: {
             brand: {
-              bg: '#050B10',
-              surface: '#0B131D',
-              surfaceElevated: '#121D2B',
-              surfaceHighlight: '#1A293B',
-              border: '#1E2D40',
-              teal: '#20E6C2',
-              cyan: '#00B4D8',
-              blue: '#3B82F6',
-              success: '#10B981',
-              warning: '#F59E0B',
-              highRisk: '#F97316',
-              critical: '#EF4444',
-              textPrimary: '#F8FAFC',
-              textSecondary: '#94A3B8',
-              textMuted: '#64748B'
+              bg: '#F8FAFC',
+              surface: '#FFFFFF',
+              surfaceElevated: '#FFFFFF',
+              surfaceHighlight: '#F1F5F9',
+              border: '#E2E8F0',
+              teal: '#0D9488',
+              tealLight: '#CCFBF1',
+              cyan: '#0284C7',
+              blue: '#2563EB',
+              success: '#059669',
+              warning: '#D97706',
+              highRisk: '#EA580C',
+              critical: '#DC2626',
+              textPrimary: '#0F172A',
+              textSecondary: '#475569',
+              textMuted: '#94A3B8'
             }
           },
           fontFamily: {
@@ -51,43 +48,40 @@
 
   <style>
     .clean-card {
-      background: rgba(11, 19, 29, 0.7);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(30, 45, 64, 0.8);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 16px;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
     }
     .clean-card:hover {
-      border-color: rgba(32, 230, 194, 0.25);
-      box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
+      border-color: #0D9488;
+      box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.1);
     }
 
     .clean-panel {
-      background: rgba(11, 19, 29, 0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(30, 45, 64, 0.9);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 20px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
     }
   </style>
 </head>
-<body class="bg-brand-bg text-brand-textPrimary font-sans antialiased min-h-screen selection:bg-brand-teal selection:text-brand-bg">
+<body class="bg-brand-bg text-brand-textPrimary font-sans antialiased min-h-screen">
 
-  <!-- BACKGROUND CANVAS -->
-  <canvas id="bgCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-30"></canvas>
-
-  <!-- WELCOME PAGE CONTAINER -->
+  <!-- LIGHT HERO BACKGROUND -->
   <main class="min-h-screen flex items-center justify-center p-8 lg:p-12 relative z-10">
     <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
-      <!-- LEFT HERO BRANDING -->
+      <!-- LEFT HERO -->
       <div class="lg:col-span-7 space-y-8">
-        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-surfaceElevated border border-brand-teal/30 text-brand-teal text-xs font-mono">
+        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-brand-teal text-xs font-mono font-semibold">
           <i data-lucide="sparkles" class="w-4 h-4"></i>
           <span>AI-Powered Pattern Intelligence 3.0</span>
         </div>
 
         <div class="space-y-4">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-textPrimary leading-tight">
             Turn Transactions <br>Into <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-cyan to-brand-blue">Intelligence.</span>
           </h1>
           <p class="text-base sm:text-lg text-brand-textSecondary max-w-xl leading-relaxed">
@@ -98,36 +92,36 @@
         <!-- THREE FEATURE CARDS -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
           <div class="clean-card p-5 space-y-2">
-            <div class="w-10 h-10 rounded-xl bg-brand-teal/10 text-brand-teal flex items-center justify-center">
+            <div class="w-10 h-10 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center">
               <i data-lucide="activity" class="w-5 h-5"></i>
             </div>
-            <h3 class="font-bold text-white text-sm">Pattern Intelligence</h3>
-            <p class="text-xs text-brand-textMuted leading-normal">Understand account behavior over time.</p>
+            <h3 class="font-bold text-brand-textPrimary text-sm">Pattern Intelligence</h3>
+            <p class="text-xs text-brand-textSecondary leading-normal">Understand account behavior over time.</p>
           </div>
 
           <div class="clean-card p-5 space-y-2">
-            <div class="w-10 h-10 rounded-xl bg-brand-cyan/10 text-brand-cyan flex items-center justify-center">
+            <div class="w-10 h-10 rounded-xl bg-sky-50 text-brand-cyan flex items-center justify-center">
               <i data-lucide="shield-alert" class="w-5 h-5"></i>
             </div>
-            <h3 class="font-bold text-white text-sm">Anomaly Detection</h3>
-            <p class="text-xs text-brand-textMuted leading-normal">Identify unexpected behavioral shifts.</p>
+            <h3 class="font-bold text-brand-textPrimary text-sm">Anomaly Detection</h3>
+            <p class="text-xs text-brand-textSecondary leading-normal">Identify unexpected behavioral shifts.</p>
           </div>
 
           <div class="clean-card p-5 space-y-2">
-            <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center">
               <i data-lucide="brain-circuit" class="w-5 h-5"></i>
             </div>
-            <h3 class="font-bold text-white text-sm">Explainable Risk</h3>
-            <p class="text-xs text-brand-textMuted leading-normal">Evidence-backed investigation summaries.</p>
+            <h3 class="font-bold text-brand-textPrimary text-sm">Explainable Risk</h3>
+            <p class="text-xs text-brand-textSecondary leading-normal">Evidence-backed investigation summaries.</p>
           </div>
         </div>
 
         <div class="flex items-center space-x-4 pt-2">
-          <a href="dashboard.html" class="px-8 py-4 rounded-xl bg-brand-teal text-brand-bg font-bold hover:bg-brand-teal/90 transition shadow-lg shadow-brand-teal/20 flex items-center space-x-3 text-sm group">
+          <a href="dashboard.html" class="px-8 py-4 rounded-xl bg-brand-teal text-white font-bold hover:bg-brand-teal/90 transition shadow-lg shadow-teal-600/20 flex items-center space-x-3 text-sm group">
             <span>GET STARTED</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
           </a>
-          <span class="text-xs text-brand-textMuted flex items-center space-x-1.5">
+          <span class="text-xs text-brand-textSecondary flex items-center space-x-1.5 font-medium">
             <i data-lucide="shield-check" class="w-4 h-4 text-brand-teal"></i>
             <span>SOC2 Type II Certified</span>
           </span>
@@ -139,50 +133,50 @@
         <div class="w-full max-w-[420px] clean-panel p-8 sm:p-10 space-y-6">
           <div class="text-center space-y-2">
             <div class="inline-flex items-center space-x-2">
-              <div class="w-10 h-10 rounded-xl bg-brand-teal flex items-center justify-center text-brand-bg font-black text-xl font-mono">
+              <div class="w-10 h-10 rounded-xl bg-brand-teal flex items-center justify-center text-white font-black text-xl font-mono shadow-md">
                 XR
               </div>
-              <span class="text-2xl font-black tracking-wider text-white">FIN-XR</span>
+              <span class="text-2xl font-black tracking-wider text-brand-textPrimary">FIN-XR</span>
             </div>
-            <h2 class="text-xl font-bold text-white">Welcome Back</h2>
+            <h2 class="text-xl font-bold text-brand-textPrimary">Welcome Back</h2>
             <p class="text-xs text-brand-textSecondary">Sign in to your intelligence workspace.</p>
           </div>
 
           <form action="dashboard.html" method="GET" class="space-y-4">
             <div class="space-y-1.5">
-              <label class="block text-xs font-semibold text-brand-textSecondary">Work Email</label>
-              <input type="email" required value="alex.morgan@finxr.io" class="w-full bg-brand-surface border border-brand-border focus:border-brand-teal rounded-xl px-4 py-3 text-xs text-white focus:outline-none transition">
+              <label class="block text-xs font-semibold text-brand-textPrimary">Work Email</label>
+              <input type="email" required value="alex.morgan@finxr.io" class="w-full bg-slate-50 border border-brand-border focus:border-brand-teal rounded-xl px-4 py-3 text-xs text-brand-textPrimary focus:bg-white focus:outline-none transition">
             </div>
 
             <div class="space-y-1.5">
               <div class="flex justify-between items-center">
-                <label class="block text-xs font-semibold text-brand-textSecondary">Password</label>
-                <a href="#" class="text-xs text-brand-teal hover:underline">Forgot password?</a>
+                <label class="block text-xs font-semibold text-brand-textPrimary">Password</label>
+                <a href="#" class="text-xs text-brand-teal font-semibold hover:underline">Forgot password?</a>
               </div>
-              <input type="password" required value="••••••••••••" class="w-full bg-brand-surface border border-brand-border focus:border-brand-teal rounded-xl px-4 py-3 text-xs text-white focus:outline-none transition">
+              <input type="password" required value="••••••••••••" class="w-full bg-slate-50 border border-brand-border focus:border-brand-teal rounded-xl px-4 py-3 text-xs text-brand-textPrimary focus:bg-white focus:outline-none transition">
             </div>
 
             <div class="flex items-center space-x-2 text-xs py-1">
-              <input type="checkbox" checked id="rem" class="rounded border-brand-border bg-brand-surface text-brand-teal focus:ring-brand-teal">
-              <label for="rem" class="text-brand-textSecondary cursor-pointer">Remember me for 30 days</label>
+              <input type="checkbox" checked id="rem" class="rounded border-brand-border text-brand-teal focus:ring-brand-teal">
+              <label for="rem" class="text-brand-textSecondary cursor-pointer font-medium">Remember me for 30 days</label>
             </div>
 
-            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-teal text-brand-bg font-bold hover:bg-brand-teal/90 transition shadow-lg shadow-brand-teal/20 text-sm flex items-center justify-center space-x-2">
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-teal text-white font-bold hover:bg-brand-teal/90 transition shadow-md text-sm flex items-center justify-center space-x-2">
               <span>Sign In</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
 
             <div class="relative my-4 text-center">
               <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-brand-border"></div></div>
-              <span class="relative bg-brand-surfaceElevated px-3 text-[10px] font-mono uppercase text-brand-textMuted">OR CONTINUE WITH</span>
+              <span class="relative bg-white px-3 text-[10px] font-mono uppercase text-brand-textMuted">OR CONTINUE WITH</span>
             </div>
 
             <div class="grid grid-cols-2 gap-3">
-              <a href="dashboard.html" class="flex items-center justify-center space-x-2 py-2.5 bg-brand-surface hover:bg-brand-surfaceHighlight border border-brand-border rounded-xl text-xs font-medium text-white transition">
+              <a href="dashboard.html" class="flex items-center justify-center space-x-2 py-2.5 bg-slate-50 hover:bg-slate-100 border border-brand-border rounded-xl text-xs font-semibold text-brand-textPrimary transition">
                 <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.9C6.2 7.3 8.9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.3 14.7c-.2-.7-.4-1.4-.4-2.2s.2-1.5.4-2.2L1.6 7.4C.6 9.4 0 10.6 0 12s.6 2.6 1.6 4.6l3.7-1.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.3-6.7-5.3L1.6 16C3.5 19.8 7.4 23 12 23z"/></svg>
                 <span>Google</span>
               </a>
-              <a href="dashboard.html" class="flex items-center justify-center space-x-2 py-2.5 bg-brand-surface hover:bg-brand-surfaceHighlight border border-brand-border rounded-xl text-xs font-medium text-white transition">
+              <a href="dashboard.html" class="flex items-center justify-center space-x-2 py-2.5 bg-slate-50 hover:bg-slate-100 border border-brand-border rounded-xl text-xs font-semibold text-brand-textPrimary transition">
                 <svg class="w-4 h-4" viewBox="0 0 23 23"><path fill="#f35325" d="M1 1h10v10H1z"/><path fill="#81bc06" d="M12 1h10v10H12z"/><path fill="#05a6f0" d="M1 12h10v10H1z"/><path fill="#ffba08" d="M12 12h10v10H12z"/></svg>
                 <span>Microsoft</span>
               </a>
@@ -196,35 +190,6 @@
 
   <script>
     lucide.createIcons();
-    const canvas = document.getElementById('bgCanvas');
-    const ctx = canvas.getContext('2d');
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-    const particles = Array.from({ length: 30 }, () => ({
-      x: Math.random() * width, y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3, radius: 1.5
-    }));
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-      ctx.strokeStyle = 'rgba(32, 230, 194, 0.04)';
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
-          if (Math.sqrt(dx*dx + dy*dy) < 150) {
-            ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
-          }
-        }
-      }
-      particles.forEach(p => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-        ctx.fillStyle = 'rgba(32, 230, 194, 0.2)';
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fill();
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
   </script>
 </body>
 </html>

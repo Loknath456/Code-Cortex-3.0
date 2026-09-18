@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,21 +19,22 @@
         extend: {
           colors: {
             brand: {
-              bg: '#050B10',
-              surface: '#0B131D',
-              surfaceElevated: '#121D2B',
-              surfaceHighlight: '#1A293B',
-              border: '#1E2D40',
-              teal: '#20E6C2',
-              cyan: '#00B4D8',
-              blue: '#3B82F6',
-              success: '#10B981',
-              warning: '#F59E0B',
-              highRisk: '#F97316',
-              critical: '#EF4444',
-              textPrimary: '#F8FAFC',
-              textSecondary: '#94A3B8',
-              textMuted: '#64748B'
+              bg: '#F8FAFC',
+              surface: '#FFFFFF',
+              surfaceElevated: '#FFFFFF',
+              surfaceHighlight: '#F1F5F9',
+              border: '#E2E8F0',
+              teal: '#0D9488',
+              tealLight: '#CCFBF1',
+              cyan: '#0284C7',
+              blue: '#2563EB',
+              success: '#059669',
+              warning: '#D97706',
+              highRisk: '#EA580C',
+              critical: '#DC2626',
+              textPrimary: '#0F172A',
+              textSecondary: '#475569',
+              textMuted: '#94A3B8'
             }
           },
           fontFamily: {
@@ -47,16 +48,17 @@
 
   <style>
     .clean-card {
-      background: rgba(11, 19, 29, 0.7);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(30, 45, 64, 0.8);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 16px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .clean-panel {
-      background: rgba(11, 19, 29, 0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(30, 45, 64, 0.9);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 20px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
     }
   </style>
 </head>
@@ -65,12 +67,12 @@
   <div class="min-h-screen flex relative z-10">
     
     <!-- LEFT SIDEBAR -->
-    <aside class="w-64 bg-brand-surface border-r border-brand-border flex flex-col justify-between shrink-0">
+    <aside class="w-64 bg-white border-r border-brand-border flex flex-col justify-between shrink-0">
       <div class="p-6">
         <div class="flex items-center space-x-3 mb-10 cursor-pointer" onclick="location.href='dashboard.html'">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-black font-mono shadow-md">XR</div>
+          <div class="w-9 h-9 rounded-xl bg-brand-teal flex items-center justify-center text-white font-black font-mono shadow-md">XR</div>
           <div>
-            <span class="text-xl font-black tracking-wider text-white">FIN-XR</span>
+            <span class="text-xl font-black tracking-wider text-brand-textPrimary">FIN-XR</span>
             <span class="block text-[10px] font-mono text-brand-teal uppercase tracking-widest font-bold">INTELLIGENCE</span>
           </div>
         </div>
@@ -78,41 +80,38 @@
         <nav class="space-y-1.5">
           <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">Core Modules</div>
           
-          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Dashboard</span>
           </a>
-          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="arrow-left-right" class="w-4 h-4"></i><span>Transaction Explorer</span>
           </a>
-          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="network" class="w-4 h-4"></i><span>Account Patterns</span>
-            <span class="ml-auto text-[9px] font-mono bg-brand-teal/20 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
+            <span class="ml-auto text-[9px] font-mono bg-teal-100 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
           </a>
-          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-brand-teal/20 text-brand-teal border-l-4 border-brand-teal">
+          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-teal-50 text-brand-teal border-l-4 border-brand-teal shadow-xs">
             <i data-lucide="shield-alert" class="w-4 h-4"></i><span>Risk Investigation</span>
-            <span class="ml-auto text-[10px] bg-brand-highRisk/20 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">237</span>
+            <span class="ml-auto text-[10px] bg-orange-100 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">54</span>
           </a>
-          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="file-text" class="w-4 h-4"></i><span>Reports & Analytics</span>
           </a>
 
           <div class="pt-6 border-t border-brand-border my-4"></div>
           <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">System</div>
 
-          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="settings" class="w-4 h-4"></i><span>Settings & Profile</span>
-          </a>
-          <a href="design-system.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
-            <i data-lucide="palette" class="w-4 h-4"></i><span>Design System</span>
           </a>
         </nav>
       </div>
 
-      <div class="p-4 border-t border-brand-border bg-brand-surfaceElevated/40">
-        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-brand-surfaceElevated transition cursor-pointer" onclick="location.href='settings.html'">
-          <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-bold text-xs ring-2 ring-brand-teal/40">AM</div>
+      <div class="p-4 border-t border-brand-border bg-slate-50">
+        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-white transition cursor-pointer border border-transparent hover:border-slate-200" onclick="location.href='settings.html'">
+          <div class="w-9 h-9 rounded-full bg-brand-teal flex items-center justify-center text-white font-bold text-xs shadow-sm">AM</div>
           <div class="overflow-hidden">
-            <div class="text-xs font-bold text-white truncate">Alex Morgan</div>
+            <div class="text-xs font-bold text-brand-textPrimary truncate">Alex Morgan</div>
             <div class="text-[10px] text-brand-teal truncate font-mono">Senior Risk Analyst</div>
           </div>
         </div>
@@ -122,15 +121,15 @@
     <!-- RIGHT MAIN BODY -->
     <div class="flex-1 flex flex-col overflow-hidden bg-brand-bg">
       
-      <header class="h-16 bg-brand-surface/80 border-b border-brand-border px-8 flex items-center justify-between shrink-0 glass-panel z-20">
+      <header class="h-16 bg-white/90 backdrop-blur-md border-b border-brand-border px-8 flex items-center justify-between shrink-0 z-20">
         <div class="flex items-center space-x-2 text-xs font-mono text-brand-textMuted">
-          <span class="text-white font-semibold">FIN-XR</span><span>/</span>
+          <span class="text-brand-textPrimary font-semibold">FIN-XR</span><span>/</span>
           <span class="text-brand-highRisk font-bold">Risk Investigation</span>
         </div>
 
         <div class="flex items-center space-x-3">
-          <button onclick="alert('Marked as Reviewed')" class="px-4 py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-white hover:bg-brand-surfaceElevated transition">Mark Reviewed</button>
-          <button onclick="alert('Flagged for Investigation')" class="px-5 py-2.5 rounded-xl bg-brand-critical text-white font-bold hover:bg-brand-critical/90 transition text-xs shadow-md">Flag Investigation</button>
+          <button onclick="alert('Marked as Reviewed')" class="px-4 py-2.5 rounded-xl bg-white border border-brand-border text-xs text-brand-textPrimary hover:bg-slate-50 transition shadow-xs">Mark Reviewed</button>
+          <button onclick="alert('Flagged for Investigation')" class="px-5 py-2.5 rounded-xl bg-brand-critical text-white font-bold hover:bg-red-700 transition text-xs shadow-md shadow-red-600/10">Flag Investigation</button>
         </div>
       </header>
 
@@ -139,11 +138,12 @@
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div class="flex items-center space-x-2 text-xs font-mono text-brand-textMuted mb-1">
-              <span>Transactions</span><span>/</span>
-              <span class="text-brand-highRisk font-bold">TX10291</span>
+              <span>Real bank.xlsx Dataset</span><span>/</span>
+              <span class="text-brand-teal font-bold">ACC-196428</span><span>/</span>
+              <span class="text-brand-highRisk font-bold">TX1001</span>
             </div>
-            <h1 class="text-3xl font-extrabold text-white tracking-tight">Risk Investigation</h1>
-            <p class="text-xs text-brand-textSecondary mt-1">Deep-dive AI behavioral evidence breakdown for flagged transaction TX10291.</p>
+            <h1 class="text-3xl font-extrabold text-brand-textPrimary tracking-tight">Risk Investigation</h1>
+            <p class="text-xs text-brand-textSecondary mt-1">Deep-dive AI behavioral evidence breakdown for flagged transaction TX1001 in account ACC-196428.</p>
           </div>
         </div>
 
@@ -151,46 +151,46 @@
           
           <!-- LEFT SCORE GAUGE CARD -->
           <div class="lg:col-span-5 clean-panel p-8 flex flex-col items-center justify-center text-center space-y-6">
-            <div class="text-xs uppercase font-mono text-brand-textMuted">AI Risk Score Gauge</div>
+            <div class="text-xs uppercase font-mono text-brand-textMuted">AI Anomaly Risk Score Gauge</div>
             
             <div class="relative w-48 h-48 flex items-center justify-center">
               <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="40" stroke="#1E2D40" stroke-width="8" fill="transparent"/>
-                <circle cx="50" cy="50" r="40" stroke="#F97316" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="32.6" stroke-linecap="round" fill="transparent"/>
+                <circle cx="50" cy="50" r="40" stroke="#E2E8F0" stroke-width="8" fill="transparent"/>
+                <circle cx="50" cy="50" r="40" stroke="#EA580C" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="40.0" stroke-linecap="round" fill="transparent"/>
               </svg>
               <div class="absolute inset-0 flex flex-col items-center justify-center">
-                <span class="text-5xl font-black font-mono text-white">87</span>
+                <span id="invScoreDisplay" class="text-5xl font-black font-mono text-brand-textPrimary">82</span>
                 <span class="text-xs font-mono font-bold uppercase text-brand-highRisk tracking-wider mt-1">/ 100 HIGH RISK</span>
               </div>
             </div>
 
             <div class="space-y-1">
-              <h3 class="font-bold text-white text-lg">Behavioral Deviation Flagged</h3>
-              <p class="text-xs text-brand-textMuted max-w-xs">Potential risk anomaly identified across 5 behavioral signals.</p>
+              <h3 class="font-bold text-brand-textPrimary text-lg">Behavioral Deviation Flagged</h3>
+              <p class="text-xs text-brand-textSecondary max-w-xs">Potential risk anomaly identified across 5 behavioral signals in bank.xlsx.</p>
             </div>
           </div>
 
           <!-- RIGHT EVIDENCE CARD -->
           <div class="lg:col-span-7 clean-panel p-8 space-y-6">
-            <h3 class="text-base font-bold text-white flex items-center space-x-2">
+            <h3 class="text-base font-bold text-brand-textPrimary flex items-center space-x-2">
               <i data-lucide="file-search" class="w-5 h-5 text-brand-teal"></i>
               <span>Why Was This Transaction Flagged? (Evidence)</span>
             </h3>
 
             <div class="space-y-4 text-xs">
-              <div class="p-4 rounded-xl bg-brand-surface border border-brand-border space-y-1">
-                <div class="font-bold text-white text-sm">Amount Deviation (+420% above baseline)</div>
-                <div class="text-brand-textMuted">Tx amount ₹85,000 exceeds account 90-day typical limit of ₹5,000.</div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-brand-border space-y-1">
+                <div class="font-bold text-brand-textPrimary text-sm">Amount Deviation (₹1,200,000.00 Payout Spike)</div>
+                <div class="text-brand-textSecondary">Transaction details: <span class="font-mono text-brand-teal font-semibold">DSB CASH PICKP IndiaforensicMET0</span>. Amount exceeds 90-day typical limit by +420%.</div>
               </div>
 
-              <div class="p-4 rounded-xl bg-brand-surface border border-brand-border space-y-1">
-                <div class="font-bold text-white text-sm">Timing Deviation (Nocturnal Activity)</div>
-                <div class="text-brand-textMuted">Initiated during 2 AM - 5 AM window (0% historical transactions in this window).</div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-brand-border space-y-1">
+                <div class="font-bold text-brand-textPrimary text-sm">Timing & Velocity Deviation (Nocturnal Burst)</div>
+                <div class="text-brand-textSecondary">Initiated during 12:00 AM window with rapid sequential cash pickup entries in ACC-196428.</div>
               </div>
 
-              <div class="p-4 rounded-xl bg-brand-surface border border-brand-border space-y-1">
-                <div class="font-bold text-white text-sm">Frequency Spike (27 txs/day burst)</div>
-                <div class="text-brand-textMuted">Sudden acceleration in transaction frequency within 3 hours.</div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-brand-border space-y-1">
+                <div class="font-bold text-brand-textPrimary text-sm">Isolation Forest Anomaly Score</div>
+                <div class="text-brand-textSecondary">Calculated reconstruction loss confirms significant deviation from account baseline behavior.</div>
               </div>
             </div>
           </div>
@@ -198,12 +198,12 @@
         </div>
 
         <!-- AI RECOMMENDATION BOX -->
-        <div class="clean-panel p-6 border-brand-teal/40 bg-brand-teal/5 space-y-2">
+        <div class="clean-panel p-6 border-teal-200 bg-teal-50/60 space-y-2">
           <div class="flex items-center space-x-2 text-brand-teal font-bold text-xs uppercase font-mono">
             <i data-lucide="bot" class="w-4 h-4"></i><span>AI Recommendation</span>
           </div>
           <p class="text-xs text-brand-textSecondary leading-relaxed">
-            "The current activity significantly deviates from the account's established transaction behavior across amount, frequency, timing and balance movement. This transaction represents a <span class="text-brand-highRisk font-bold">Potential Anomaly</span> requiring analyst review before final settlement."
+            "The current transaction significantly deviates from account ACC-196428's established historical baseline across amount, frequency, timing and balance movement. This transaction represents a <span class="text-brand-highRisk font-bold">Potential Anomaly</span> requiring analyst review before final settlement."
           </p>
         </div>
 

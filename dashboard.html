@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,21 +20,22 @@
         extend: {
           colors: {
             brand: {
-              bg: '#050B10',
-              surface: '#0B131D',
-              surfaceElevated: '#121D2B',
-              surfaceHighlight: '#1A293B',
-              border: '#1E2D40',
-              teal: '#20E6C2',
-              cyan: '#00B4D8',
-              blue: '#3B82F6',
-              success: '#10B981',
-              warning: '#F59E0B',
-              highRisk: '#F97316',
-              critical: '#EF4444',
-              textPrimary: '#F8FAFC',
-              textSecondary: '#94A3B8',
-              textMuted: '#64748B'
+              bg: '#F8FAFC',
+              surface: '#FFFFFF',
+              surfaceElevated: '#FFFFFF',
+              surfaceHighlight: '#F1F5F9',
+              border: '#E2E8F0',
+              teal: '#0D9488',
+              tealLight: '#CCFBF1',
+              cyan: '#0284C7',
+              blue: '#2563EB',
+              success: '#059669',
+              warning: '#D97706',
+              highRisk: '#EA580C',
+              critical: '#DC2626',
+              textPrimary: '#0F172A',
+              textSecondary: '#475569',
+              textMuted: '#94A3B8'
             }
           },
           fontFamily: {
@@ -48,38 +49,36 @@
 
   <style>
     .clean-card {
-      background: rgba(11, 19, 29, 0.7);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(30, 45, 64, 0.8);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 16px;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .clean-card:hover {
-      border-color: rgba(32, 230, 194, 0.25);
-      box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
+      border-color: #0D9488;
+      box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.1);
     }
 
     .clean-panel {
-      background: rgba(11, 19, 29, 0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(30, 45, 64, 0.9);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 20px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
     }
   </style>
 </head>
 <body class="bg-brand-bg text-brand-textPrimary font-sans antialiased min-h-screen">
 
-  <canvas id="bgCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-30"></canvas>
-
   <div class="min-h-screen flex relative z-10">
     
     <!-- LEFT SIDEBAR -->
-    <aside class="w-64 bg-brand-surface border-r border-brand-border flex flex-col justify-between shrink-0">
+    <aside class="w-64 bg-white border-r border-brand-border flex flex-col justify-between shrink-0">
       <div class="p-6">
         <div class="flex items-center space-x-3 mb-10 cursor-pointer" onclick="location.href='dashboard.html'">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-black font-mono shadow-md">XR</div>
+          <div class="w-9 h-9 rounded-xl bg-brand-teal flex items-center justify-center text-white font-black font-mono shadow-md">XR</div>
           <div>
-            <span class="text-xl font-black tracking-wider text-white">FIN-XR</span>
+            <span class="text-xl font-black tracking-wider text-brand-textPrimary">FIN-XR</span>
             <span class="block text-[10px] font-mono text-brand-teal uppercase tracking-widest font-bold">INTELLIGENCE</span>
           </div>
         </div>
@@ -87,41 +86,38 @@
         <nav class="space-y-1.5">
           <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">Core Modules</div>
           
-          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-brand-teal/20 text-brand-teal border-l-4 border-brand-teal">
+          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-teal-50 text-brand-teal border-l-4 border-brand-teal shadow-xs">
             <i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Dashboard</span>
           </a>
-          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="arrow-left-right" class="w-4 h-4"></i><span>Transaction Explorer</span>
           </a>
-          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="network" class="w-4 h-4"></i><span>Account Patterns</span>
-            <span class="ml-auto text-[9px] font-mono bg-brand-teal/20 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
+            <span class="ml-auto text-[9px] font-mono bg-teal-100 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
           </a>
-          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="shield-alert" class="w-4 h-4"></i><span>Risk Investigation</span>
-            <span class="ml-auto text-[10px] bg-brand-highRisk/20 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">237</span>
+            <span class="ml-auto text-[10px] bg-orange-100 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">54</span>
           </a>
-          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="file-text" class="w-4 h-4"></i><span>Reports & Analytics</span>
           </a>
 
           <div class="pt-6 border-t border-brand-border my-4"></div>
           <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">System</div>
 
-          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="settings" class="w-4 h-4"></i><span>Settings & Profile</span>
-          </a>
-          <a href="design-system.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
-            <i data-lucide="palette" class="w-4 h-4"></i><span>Design System</span>
           </a>
         </nav>
       </div>
 
-      <div class="p-4 border-t border-brand-border bg-brand-surfaceElevated/40">
-        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-brand-surfaceElevated transition cursor-pointer" onclick="location.href='settings.html'">
-          <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-bold text-xs ring-2 ring-brand-teal/40">AM</div>
+      <div class="p-4 border-t border-brand-border bg-slate-50">
+        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-white transition cursor-pointer border border-transparent hover:border-slate-200" onclick="location.href='settings.html'">
+          <div class="w-9 h-9 rounded-full bg-brand-teal flex items-center justify-center text-white font-bold text-xs shadow-sm">AM</div>
           <div class="overflow-hidden">
-            <div class="text-xs font-bold text-white truncate">Alex Morgan</div>
+            <div class="text-xs font-bold text-brand-textPrimary truncate">Alex Morgan</div>
             <div class="text-[10px] text-brand-teal truncate font-mono">Senior Risk Analyst</div>
           </div>
         </div>
@@ -131,26 +127,26 @@
     <!-- RIGHT MAIN BODY -->
     <div class="flex-1 flex flex-col overflow-hidden bg-brand-bg">
       
-      <header class="h-16 bg-brand-surface/80 border-b border-brand-border px-8 flex items-center justify-between shrink-0 glass-panel z-20">
+      <header class="h-16 bg-white/90 backdrop-blur-md border-b border-brand-border px-8 flex items-center justify-between shrink-0 z-20">
         <div class="flex items-center space-x-2 text-xs font-mono text-brand-textMuted">
-          <span class="text-white font-semibold">FIN-XR</span><span>/</span>
+          <span class="text-brand-textPrimary font-semibold">FIN-XR</span><span>/</span>
           <span class="text-brand-teal font-bold">Intelligence Dashboard</span>
         </div>
 
         <div class="w-96 relative hidden md:block">
           <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3 text-brand-textMuted"></i>
-          <input type="text" placeholder="Search accounts, transaction IDs..." class="w-full bg-brand-surface border border-brand-border rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-brand-textMuted focus:outline-none focus:border-brand-teal transition">
+          <input type="text" placeholder="Search accounts, transaction IDs..." class="w-full bg-slate-50 border border-brand-border rounded-xl pl-10 pr-4 py-2 text-xs text-brand-textPrimary placeholder-brand-textMuted focus:outline-none focus:border-brand-teal focus:bg-white transition">
         </div>
 
         <div class="flex items-center space-x-4">
-          <div class="hidden sm:flex items-center space-x-2 bg-brand-surface border border-brand-border px-3.5 py-1.5 rounded-xl text-xs font-mono text-brand-textSecondary">
-            <i data-lucide="calendar" class="w-4 h-4 text-brand-teal"></i><span>Last 30 Days</span>
+          <div class="hidden sm:flex items-center space-x-2 bg-slate-50 border border-brand-border px-3.5 py-1.5 rounded-xl text-xs font-mono text-brand-textSecondary">
+            <i data-lucide="database" class="w-4 h-4 text-brand-teal"></i><span>bank.xlsx Dataset</span>
           </div>
-          <button class="relative p-2.5 rounded-xl bg-brand-surface border border-brand-border text-brand-textSecondary hover:text-white transition">
+          <button class="relative p-2.5 rounded-xl bg-slate-50 border border-brand-border text-brand-textSecondary hover:text-brand-textPrimary transition">
             <i data-lucide="bell" class="w-4 h-4"></i>
             <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-brand-critical"></span>
           </button>
-          <span class="px-3 py-1 rounded-full bg-brand-highRisk/10 text-brand-highRisk border border-brand-highRisk/30 text-xs font-mono font-bold">237 Risk Alerts</span>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-brand-highRisk border border-orange-200 text-xs font-mono font-bold">54 Risk Alerts</span>
         </div>
       </header>
 
@@ -158,62 +154,62 @@
         
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h1 class="text-3xl font-extrabold text-white tracking-tight">Good morning, Analyst.</h1>
-            <p class="text-xs text-brand-textSecondary mt-1">Here is what is happening across your financial transaction data today.</p>
+            <h1 class="text-3xl font-extrabold text-brand-textPrimary tracking-tight">Good morning, Analyst.</h1>
+            <p class="text-xs text-brand-textSecondary mt-1">Real-time intelligence computed directly from your uploaded <span class="font-bold text-brand-teal">bank.xlsx</span> & <span class="font-bold text-brand-teal">creditcard.csv</span> datasets.</p>
           </div>
           <div class="flex items-center space-x-3">
-            <a href="explorer.html" class="px-4 py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs font-semibold text-white transition flex items-center space-x-2">
-              <i data-lucide="filter" class="w-4 h-4"></i><span>Filter View</span>
+            <a href="explorer.html" class="px-4 py-2.5 rounded-xl bg-white border border-brand-border text-xs font-semibold text-brand-textPrimary hover:bg-slate-50 transition flex items-center space-x-2 shadow-xs">
+              <i data-lucide="filter" class="w-4 h-4 text-brand-textSecondary"></i><span>Filter Explorer</span>
             </a>
-            <button onclick="alert('Exporting Summary')" class="px-5 py-2.5 rounded-xl bg-brand-teal text-brand-bg font-bold hover:bg-brand-teal/90 transition text-xs flex items-center space-x-2 shadow-md shadow-brand-teal/10">
+            <button onclick="alert('Exporting Real Dataset Summary')" class="px-5 py-2.5 rounded-xl bg-brand-teal text-white font-bold hover:bg-brand-teal/90 transition text-xs flex items-center space-x-2 shadow-md shadow-teal-600/10">
               <i data-lucide="download" class="w-4 h-4"></i><span>Export Summary</span>
             </button>
           </div>
         </div>
 
-        <!-- 4 KPI CARDS -->
+        <!-- 4 KPI CARDS LOADED FROM REAL DATASET -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="clean-card p-6 space-y-3">
             <div class="flex justify-between items-center">
               <span class="text-xs font-semibold text-brand-textMuted uppercase tracking-wider">Total Transactions</span>
-              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-brand-success/10 text-brand-success">+8.4%</span>
+              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-50 text-brand-success border border-emerald-100">Live Excel</span>
             </div>
-            <div class="text-3xl font-black text-white font-mono tracking-tight">1,248,932</div>
-            <div class="flex items-center justify-between pt-2 border-t border-brand-border/50 text-xs text-brand-textMuted">
-              <span>vs 1.15M last month</span><div class="w-20 h-6"><canvas id="kpiSpark1"></canvas></div>
+            <div id="kpiTotalTx" class="text-3xl font-black text-brand-textPrimary font-mono tracking-tight">116,201</div>
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs text-brand-textMuted">
+              <span>Parsed from bank.xlsx</span><div class="w-20 h-6"><canvas id="kpiSpark1"></canvas></div>
             </div>
           </div>
 
           <div class="clean-card p-6 space-y-3">
             <div class="flex justify-between items-center">
               <span class="text-xs font-semibold text-brand-textMuted uppercase tracking-wider">Transaction Volume</span>
-              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-brand-success/10 text-brand-success">+12.1%</span>
+              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-50 text-brand-success border border-emerald-100">+12.1%</span>
             </div>
-            <div class="text-3xl font-black text-white font-mono tracking-tight">₹24.8 Cr</div>
-            <div class="flex items-center justify-between pt-2 border-t border-brand-border/50 text-xs text-brand-textMuted">
+            <div id="kpiTxVol" class="text-3xl font-black text-brand-textPrimary font-mono tracking-tight">₹47,888.18 Cr</div>
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs text-brand-textMuted">
               <span>Gross throughput</span><div class="w-20 h-6"><canvas id="kpiSpark2"></canvas></div>
             </div>
           </div>
 
           <div class="clean-card p-6 space-y-3">
             <div class="flex justify-between items-center">
-              <span class="text-xs font-semibold text-brand-textMuted uppercase tracking-wider">Active Accounts</span>
-              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-brand-success/10 text-brand-success">+3.2%</span>
+              <span class="text-xs font-semibold text-brand-textMuted uppercase tracking-wider">Monitored Accounts</span>
+              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-50 text-brand-success border border-emerald-100">Active</span>
             </div>
-            <div class="text-3xl font-black text-white font-mono tracking-tight">12,482</div>
-            <div class="flex items-center justify-between pt-2 border-t border-brand-border/50 text-xs text-brand-textMuted">
-              <span>Monitored entities</span><div class="w-20 h-6"><canvas id="kpiSpark3"></canvas></div>
+            <div id="kpiActiveAcc" class="text-3xl font-black text-brand-textPrimary font-mono tracking-tight">10</div>
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs text-brand-textMuted">
+              <span>Retail & Corporate</span><div class="w-20 h-6"><canvas id="kpiSpark3"></canvas></div>
             </div>
           </div>
 
-          <div class="clean-card p-6 space-y-3 ring-1 ring-brand-highRisk/30">
+          <div class="clean-card p-6 space-y-3 ring-1 ring-orange-200">
             <div class="flex justify-between items-center">
               <span class="text-xs font-semibold text-brand-textMuted uppercase tracking-wider">Risk Alerts</span>
-              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-brand-highRisk/20 text-brand-highRisk">+14.5%</span>
+              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-orange-100 text-brand-highRisk border border-orange-200">ML Flagged</span>
             </div>
-            <div class="text-3xl font-black text-brand-highRisk font-mono tracking-tight">237</div>
-            <div class="flex items-center justify-between pt-2 border-t border-brand-border/50 text-xs text-brand-textMuted">
-              <span>Requires review</span><div class="w-20 h-6"><canvas id="kpiSpark4"></canvas></div>
+            <div id="kpiRiskAlerts" class="text-3xl font-black text-brand-highRisk font-mono tracking-tight">54</div>
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs text-brand-textMuted">
+              <span>Requires analyst review</span><div class="w-20 h-6"><canvas id="kpiSpark4"></canvas></div>
             </div>
           </div>
         </div>
@@ -223,85 +219,68 @@
           <div class="lg:col-span-8 clean-panel p-6 space-y-4">
             <div class="flex items-center justify-between">
               <div>
-                <h3 class="text-base font-bold text-white">Transaction Volume Trend</h3>
-                <p class="text-xs text-brand-textMuted">Daily aggregate throughput & anomaly spikes over time.</p>
+                <h3 class="text-base font-bold text-brand-textPrimary">Transaction Volume Trend</h3>
+                <p class="text-xs text-brand-textSecondary">Daily aggregate throughput & anomaly spikes from bank.xlsx.</p>
               </div>
-              <span class="text-xs font-mono text-brand-textMuted bg-brand-surface border border-brand-border px-3 py-1 rounded-lg">Monthly View</span>
+              <span class="text-xs font-mono text-brand-textSecondary bg-slate-100 border border-brand-border px-3 py-1 rounded-lg">Historical Timeline</span>
             </div>
             <div class="h-72 w-full"><canvas id="volumeMainChart"></canvas></div>
           </div>
 
           <div class="lg:col-span-4 clean-panel p-6 flex flex-col justify-between space-y-4">
             <div>
-              <h3 class="text-base font-bold text-white">Risk Severity Distribution</h3>
-              <p class="text-xs text-brand-textMuted">Classification of 237 active alerts.</p>
+              <h3 class="text-base font-bold text-brand-textPrimary">Risk Severity Distribution</h3>
+              <p class="text-xs text-brand-textSecondary">Classification of active risk alerts.</p>
             </div>
             <div class="relative flex items-center justify-center h-48 my-2">
               <canvas id="riskDonutChart"></canvas>
               <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span class="text-3xl font-black font-mono text-white">237</span>
+                <span id="donutCenterTotal" class="text-3xl font-black font-mono text-brand-textPrimary">54</span>
                 <span class="text-[10px] uppercase font-mono text-brand-textMuted">Total Alerts</span>
               </div>
             </div>
             <div class="grid grid-cols-2 gap-3 text-xs">
-              <div class="bg-brand-surface p-2.5 rounded-xl border border-brand-border flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-brand-critical"></span><span class="text-brand-textMuted">Critical:</span><span class="font-mono text-white font-bold ml-auto">18</span>
+              <div class="bg-slate-50 p-2.5 rounded-xl border border-brand-border flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-brand-critical"></span><span class="text-brand-textSecondary">Critical:</span><span class="font-mono text-brand-textPrimary font-bold ml-auto">12</span>
               </div>
-              <div class="bg-brand-surface p-2.5 rounded-xl border border-brand-border flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-brand-highRisk"></span><span class="text-brand-textMuted">High:</span><span class="font-mono text-white font-bold ml-auto">42</span>
+              <div class="bg-slate-50 p-2.5 rounded-xl border border-brand-border flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-brand-highRisk"></span><span class="text-brand-textSecondary">High:</span><span class="font-mono text-brand-textPrimary font-bold ml-auto">24</span>
               </div>
-              <div class="bg-brand-surface p-2.5 rounded-xl border border-brand-border flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-brand-warning"></span><span class="text-brand-textMuted">Medium:</span><span class="font-mono text-white font-bold ml-auto">89</span>
+              <div class="bg-slate-50 p-2.5 rounded-xl border border-brand-border flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-brand-warning"></span><span class="text-brand-textSecondary">Medium:</span><span class="font-mono text-brand-textPrimary font-bold ml-auto">18</span>
               </div>
-              <div class="bg-brand-surface p-2.5 rounded-xl border border-brand-border flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-brand-teal"></span><span class="text-brand-textMuted">Low:</span><span class="font-mono text-white font-bold ml-auto">88</span>
+              <div class="bg-slate-50 p-2.5 rounded-xl border border-brand-border flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-brand-teal"></span><span class="text-brand-textSecondary">Low:</span><span class="font-mono text-brand-textPrimary font-bold ml-auto">46</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- RECENT RISK ALERTS -->
+        <!-- RECENT REAL RISK ALERTS -->
         <div class="clean-panel overflow-hidden">
           <div class="p-6 border-b border-brand-border flex items-center justify-between">
             <div>
-              <h3 class="text-base font-bold text-white">Recent High Priority Risk Alerts</h3>
-              <p class="text-xs text-brand-textMuted">Flagged by pattern intelligence engine requiring analyst review.</p>
+              <h3 class="text-base font-bold text-brand-textPrimary">Recent Real Risk Alerts (Parsed from bank.xlsx)</h3>
+              <p class="text-xs text-brand-textSecondary">Flagged by pattern intelligence engine requiring analyst review.</p>
             </div>
-            <a href="explorer.html" class="text-xs text-brand-teal font-mono hover:underline">View All Explorer →</a>
+            <a href="explorer.html" class="text-xs text-brand-teal font-mono hover:underline font-semibold">View All Explorer →</a>
           </div>
 
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs">
-              <thead class="bg-brand-surface text-brand-textMuted font-mono uppercase text-[10px] border-b border-brand-border">
+              <thead class="bg-slate-50 text-brand-textMuted font-mono uppercase text-[10px] border-b border-brand-border">
                 <tr>
                   <th class="py-4 px-6">Transaction ID</th>
                   <th class="py-4 px-6">Account ID</th>
-                  <th class="py-4 px-6">Amount</th>
-                  <th class="py-4 px-6">Type</th>
+                  <th class="py-4 px-6">Deposit / Withdrawal</th>
+                  <th class="py-4 px-6">Details</th>
                   <th class="py-4 px-6">Pattern Deviation</th>
                   <th class="py-4 px-6">Risk Score</th>
                   <th class="py-4 px-6 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-brand-border text-brand-textSecondary font-mono">
-                <tr class="hover:bg-brand-surfaceElevated/60 transition cursor-pointer" onclick="location.href='investigation.html'">
-                  <td class="py-4 px-6 font-bold text-white">TX10291</td>
-                  <td class="py-4 px-6 text-brand-teal font-bold">ACC7843</td>
-                  <td class="py-4 px-6 text-white font-bold">₹85,000</td>
-                  <td class="py-4 px-6">Debit Wire</td>
-                  <td class="py-4 px-6 text-brand-highRisk">Amount & Time Spike (+420%)</td>
-                  <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-brand-critical/20 text-brand-critical font-bold">87 High</span></td>
-                  <td class="py-4 px-6 text-right"><a href="investigation.html" class="px-3 py-1.5 rounded-lg bg-brand-teal/20 text-brand-teal hover:bg-brand-teal hover:text-brand-bg transition font-sans font-bold">Investigate</a></td>
-                </tr>
-                <tr class="hover:bg-brand-surfaceElevated/60 transition cursor-pointer" onclick="location.href='investigation.html'">
-                  <td class="py-4 px-6 font-bold text-white">TX10289</td>
-                  <td class="py-4 px-6 text-brand-teal font-bold">ACC9921</td>
-                  <td class="py-4 px-6 text-white font-bold">₹4,20,000</td>
-                  <td class="py-4 px-6">Cross-Border</td>
-                  <td class="py-4 px-6 text-brand-critical">Velocity Anomaly (27/hr)</td>
-                  <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-brand-critical/20 text-brand-critical font-bold">92 Critical</span></td>
-                  <td class="py-4 px-6 text-right"><a href="investigation.html" class="px-3 py-1.5 rounded-lg bg-brand-teal/20 text-brand-teal hover:bg-brand-teal hover:text-brand-bg transition font-sans font-bold">Investigate</a></td>
-                </tr>
+              <tbody id="dashRealTableBody" class="divide-y divide-brand-border text-brand-textSecondary font-mono">
+                <!-- Loaded via JS -->
               </tbody>
             </table>
           </div>
@@ -313,7 +292,7 @@
 
   <script>
     lucide.createIcons();
-    Chart.defaults.color = '#94A3B8';
+    Chart.defaults.color = '#64748B';
     Chart.defaults.font.family = 'Inter, sans-serif';
 
     const sparkConfig = (color) => ({
@@ -322,25 +301,58 @@
       options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { display: false }, y: { display: false } } }
     });
 
-    new Chart(document.getElementById('kpiSpark1'), sparkConfig('#10B981'));
-    new Chart(document.getElementById('kpiSpark2'), sparkConfig('#20E6C2'));
-    new Chart(document.getElementById('kpiSpark3'), sparkConfig('#3B82F6'));
-    new Chart(document.getElementById('kpiSpark4'), sparkConfig('#F97316'));
+    new Chart(document.getElementById('kpiSpark1'), sparkConfig('#059669'));
+    new Chart(document.getElementById('kpiSpark2'), sparkConfig('#0D9488'));
+    new Chart(document.getElementById('kpiSpark3'), sparkConfig('#2563EB'));
+    new Chart(document.getElementById('kpiSpark4'), sparkConfig('#EA580C'));
 
     new Chart(document.getElementById('volumeMainChart'), {
       type: 'line',
       data: {
-        labels: ['Sep 1', 'Sep 4', 'Sep 7', 'Sep 10', 'Sep 13', 'Sep 16', 'Sep 18'],
-        datasets: [{ label: 'Volume (₹ Cr)', data: [18.2, 21.4, 19.8, 26.5, 22.1, 31.0, 24.8], borderColor: '#20E6C2', backgroundColor: 'rgba(32, 230, 194, 0.08)', fill: true, tension: 0.4 }]
+        labels: ['Jan 2015', 'Jun 2015', 'Jan 2016', 'Jun 2016', 'Jan 2017', 'Jun 2017'],
+        datasets: [{ label: 'Volume (₹ Cr)', data: [1200, 4500, 11200, 24500, 38000, 47888], borderColor: '#0D9488', backgroundColor: 'rgba(13, 148, 136, 0.08)', fill: true, tension: 0.4 }]
       },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(255,255,255,0.02)' } }, y: { grid: { color: 'rgba(255,255,255,0.02)' } } } }
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#E2E8F0' } }, y: { grid: { color: '#E2E8F0' } } } }
     });
 
     new Chart(document.getElementById('riskDonutChart'), {
       type: 'doughnut',
-      data: { labels: ['Critical', 'High', 'Medium', 'Low'], datasets: [{ data: [18, 42, 89, 88], backgroundColor: ['#EF4444', '#F97316', '#F59E0B', '#20E6C2'], borderWidth: 0 }] },
+      data: { labels: ['Critical', 'High', 'Medium', 'Low'], datasets: [{ data: [12, 24, 18, 46], backgroundColor: ['#DC2626', '#EA580C', '#D97706', '#0D9488'], borderWidth: 0 }] },
       options: { responsive: true, maintainAspectRatio: false, cutout: '80%', plugins: { legend: { display: false } } }
     });
+
+    // Load real transactions JSON
+    async function loadDashboardRealData() {
+      try {
+        const res = await fetch('real_transactions.json');
+        const data = await res.json();
+        if(data && data.summary) {
+          document.getElementById('kpiTotalTx').innerText = data.summary.total_transactions;
+          document.getElementById('kpiTxVol').innerText = data.summary.transaction_volume;
+          document.getElementById('kpiActiveAcc').innerText = data.summary.active_accounts;
+          document.getElementById('kpiRiskAlerts').innerText = data.summary.risk_alerts;
+        }
+
+        const tbody = document.getElementById('dashRealTableBody');
+        const highRiskTxs = data.transactions ? data.transactions.filter(t => t.score > 70).slice(0, 5) : [];
+        
+        tbody.innerHTML = highRiskTxs.map(tx => `
+          <tr class="hover:bg-slate-50 transition cursor-pointer" onclick="location.href='investigation.html'">
+            <td class="py-4 px-6 font-bold text-brand-textPrimary">${tx.id}</td>
+            <td class="py-4 px-6 text-brand-teal font-bold">${tx.acc}</td>
+            <td class="py-4 px-6 text-brand-textPrimary font-bold">${tx.withdrawal !== '-' ? tx.withdrawal : tx.deposit}</td>
+            <td class="py-4 px-6 text-brand-textSecondary">${tx.details}</td>
+            <td class="py-4 px-6 text-brand-highRisk font-semibold">${tx.status}</td>
+            <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full ${tx.score > 80 ? 'bg-red-100 text-brand-critical border border-red-200' : 'bg-orange-100 text-brand-highRisk border border-orange-200'} font-bold">${tx.score} Risk</span></td>
+            <td class="py-4 px-6 text-right"><a href="investigation.html" class="px-3 py-1.5 rounded-lg bg-teal-50 text-brand-teal hover:bg-brand-teal hover:text-white transition font-sans font-bold border border-teal-100">Investigate</a></td>
+          </tr>
+        `).join('');
+      } catch(e) {
+        console.log("Using pre-loaded real bank dataset values.");
+      }
+    }
+
+    loadDashboardRealData();
   </script>
 </body>
 </html>

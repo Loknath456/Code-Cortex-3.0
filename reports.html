@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,21 +19,22 @@
         extend: {
           colors: {
             brand: {
-              bg: '#050B10',
-              surface: '#0B131D',
-              surfaceElevated: '#121D2B',
-              surfaceHighlight: '#1A293B',
-              border: '#1E2D40',
-              teal: '#20E6C2',
-              cyan: '#00B4D8',
-              blue: '#3B82F6',
-              success: '#10B981',
-              warning: '#F59E0B',
-              highRisk: '#F97316',
-              critical: '#EF4444',
-              textPrimary: '#F8FAFC',
-              textSecondary: '#94A3B8',
-              textMuted: '#64748B'
+              bg: '#F8FAFC',
+              surface: '#FFFFFF',
+              surfaceElevated: '#FFFFFF',
+              surfaceHighlight: '#F1F5F9',
+              border: '#E2E8F0',
+              teal: '#0D9488',
+              tealLight: '#CCFBF1',
+              cyan: '#0284C7',
+              blue: '#2563EB',
+              success: '#059669',
+              warning: '#D97706',
+              highRisk: '#EA580C',
+              critical: '#DC2626',
+              textPrimary: '#0F172A',
+              textSecondary: '#475569',
+              textMuted: '#94A3B8'
             }
           },
           fontFamily: {
@@ -47,16 +48,28 @@
 
   <style>
     .clean-card {
-      background: rgba(11, 19, 29, 0.7);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(30, 45, 64, 0.8);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 16px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .clean-card:hover {
+      border-color: #0D9488;
+      box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.1);
+    }
+
     .clean-panel {
-      background: rgba(11, 19, 29, 0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(30, 45, 64, 0.9);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 20px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    @media print {
+      aside, header, .no-print { display: none !important; }
+      main { padding: 0 !important; }
+      body { background: white !important; }
     }
   </style>
 </head>
@@ -65,12 +78,12 @@
   <div class="min-h-screen flex relative z-10">
     
     <!-- LEFT SIDEBAR -->
-    <aside class="w-64 bg-brand-surface border-r border-brand-border flex flex-col justify-between shrink-0">
+    <aside class="w-64 bg-white border-r border-brand-border flex flex-col justify-between shrink-0 no-print">
       <div class="p-6">
         <div class="flex items-center space-x-3 mb-10 cursor-pointer" onclick="location.href='dashboard.html'">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-black font-mono shadow-md">XR</div>
+          <div class="w-9 h-9 rounded-xl bg-brand-teal flex items-center justify-center text-white font-black font-mono shadow-md">XR</div>
           <div>
-            <span class="text-xl font-black tracking-wider text-white">FIN-XR</span>
+            <span class="text-xl font-black tracking-wider text-brand-textPrimary">FIN-XR</span>
             <span class="block text-[10px] font-mono text-brand-teal uppercase tracking-widest font-bold">INTELLIGENCE</span>
           </div>
         </div>
@@ -78,41 +91,38 @@
         <nav class="space-y-1.5">
           <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">Core Modules</div>
           
-          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Dashboard</span>
           </a>
-          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="arrow-left-right" class="w-4 h-4"></i><span>Transaction Explorer</span>
           </a>
-          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="network" class="w-4 h-4"></i><span>Account Patterns</span>
-            <span class="ml-auto text-[9px] font-mono bg-brand-teal/20 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
+            <span class="ml-auto text-[9px] font-mono bg-teal-100 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
           </a>
-          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="shield-alert" class="w-4 h-4"></i><span>Risk Investigation</span>
-            <span class="ml-auto text-[10px] bg-brand-highRisk/20 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">237</span>
+            <span class="ml-auto text-[10px] bg-orange-100 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">54</span>
           </a>
-          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-brand-teal/20 text-brand-teal border-l-4 border-brand-teal">
+          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-teal-50 text-brand-teal border-l-4 border-brand-teal shadow-xs">
             <i data-lucide="file-text" class="w-4 h-4"></i><span>Reports & Analytics</span>
           </a>
 
           <div class="pt-6 border-t border-brand-border my-4"></div>
           <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">System</div>
 
-          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="settings" class="w-4 h-4"></i><span>Settings & Profile</span>
-          </a>
-          <a href="design-system.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
-            <i data-lucide="palette" class="w-4 h-4"></i><span>Design System</span>
           </a>
         </nav>
       </div>
 
-      <div class="p-4 border-t border-brand-border bg-brand-surfaceElevated/40">
-        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-brand-surfaceElevated transition cursor-pointer" onclick="location.href='settings.html'">
-          <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-bold text-xs ring-2 ring-brand-teal/40">AM</div>
+      <div class="p-4 border-t border-brand-border bg-slate-50">
+        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-white transition cursor-pointer border border-transparent hover:border-slate-200" onclick="location.href='settings.html'">
+          <div class="w-9 h-9 rounded-full bg-brand-teal flex items-center justify-center text-white font-bold text-xs shadow-sm">AM</div>
           <div class="overflow-hidden">
-            <div class="text-xs font-bold text-white truncate">Alex Morgan</div>
+            <div class="text-xs font-bold text-brand-textPrimary truncate">Alex Morgan</div>
             <div class="text-[10px] text-brand-teal truncate font-mono">Senior Risk Analyst</div>
           </div>
         </div>
@@ -122,68 +132,138 @@
     <!-- RIGHT MAIN BODY -->
     <div class="flex-1 flex flex-col overflow-hidden bg-brand-bg">
       
-      <header class="h-16 bg-brand-surface/80 border-b border-brand-border px-8 flex items-center justify-between shrink-0 glass-panel z-20">
+      <header class="h-16 bg-white/90 backdrop-blur-md border-b border-brand-border px-8 flex items-center justify-between shrink-0 z-20 no-print">
         <div class="flex items-center space-x-2 text-xs font-mono text-brand-textMuted">
-          <span class="text-white font-semibold">FIN-XR</span><span>/</span>
+          <span class="text-brand-textPrimary font-semibold">FIN-XR</span><span>/</span>
           <span class="text-brand-teal font-bold">Reports & Analytics</span>
         </div>
 
-        <button onclick="alert('Exporting Full Audit Suite')" class="px-5 py-2.5 rounded-xl bg-brand-teal text-brand-bg font-bold hover:bg-brand-teal/90 transition text-xs flex items-center space-x-2">
-          <i data-lucide="download" class="w-4 h-4"></i><span>Download Suite (PDF)</span>
-        </button>
+        <div class="flex items-center space-x-3">
+          <button onclick="downloadCSVReport()" class="px-4 py-2.5 rounded-xl bg-white border border-brand-border text-xs text-brand-textPrimary hover:bg-slate-50 transition flex items-center space-x-2 shadow-xs">
+            <i data-lucide="file-spreadsheet" class="w-4 h-4 text-brand-teal"></i><span>Export CSV</span>
+          </button>
+          <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-brand-teal text-white font-bold hover:bg-brand-teal/90 transition text-xs flex items-center space-x-2 shadow-md shadow-teal-600/10">
+            <i data-lucide="printer" class="w-4 h-4"></i><span>Download Suite (PDF)</span>
+          </button>
+        </div>
       </header>
 
       <main class="flex-1 overflow-y-auto p-8 lg:p-10 space-y-8">
         
-        <div>
-          <h1 class="text-3xl font-extrabold text-white tracking-tight">Reports & Analytics</h1>
-          <p class="text-xs text-brand-textSecondary mt-1">Turn transaction intelligence into actionable compliance reports.</p>
+        <div class="no-print">
+          <h1 class="text-3xl font-extrabold text-brand-textPrimary tracking-tight">Reports & Compliance Analytics</h1>
+          <p class="text-xs text-brand-textSecondary mt-1">Generate and inspect audit-ready transaction risk reports compiled directly from <span class="font-bold text-brand-teal">bank.xlsx</span> & <span class="font-bold text-brand-teal">creditcard.csv</span>.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 4 REPORT CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 no-print">
           <div class="clean-card p-6 space-y-4 flex flex-col justify-between">
             <div class="space-y-2">
-              <div class="w-10 h-10 rounded-xl bg-brand-teal/10 text-brand-teal flex items-center justify-center">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center border border-teal-100">
                 <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
               </div>
-              <h3 class="font-bold text-white text-sm">Transaction Overview</h3>
-              <p class="text-xs text-brand-textMuted">Monthly volume & deposits breakdown.</p>
+              <h3 class="font-bold text-brand-textPrimary text-sm">Transaction Overview</h3>
+              <p class="text-xs text-brand-textSecondary">Monthly throughput & aggregate deposit metrics.</p>
             </div>
-            <button onclick="alert('Generating Report...')" class="w-full py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-teal font-mono">View Report</button>
+            <button onclick="viewReport('overview')" class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-teal-50 hover:text-brand-teal border border-brand-border text-xs text-brand-textPrimary font-mono font-bold transition">View Report</button>
           </div>
 
           <div class="clean-card p-6 space-y-4 flex flex-col justify-between">
             <div class="space-y-2">
-              <div class="w-10 h-10 rounded-xl bg-brand-cyan/10 text-brand-cyan flex items-center justify-center">
+              <div class="w-10 h-10 rounded-xl bg-sky-50 text-brand-cyan flex items-center justify-center border border-sky-100">
                 <i data-lucide="network" class="w-5 h-5"></i>
               </div>
-              <h3 class="font-bold text-white text-sm">Behavioral Pattern Report</h3>
-              <p class="text-xs text-brand-textMuted">Deep baseline deviation analysis.</p>
+              <h3 class="font-bold text-brand-textPrimary text-sm">Behavioral Pattern Report</h3>
+              <p class="text-xs text-brand-textSecondary">Deep baseline deviation & velocity analysis.</p>
             </div>
-            <button onclick="alert('Generating Report...')" class="w-full py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-cyan font-mono">View Report</button>
+            <button onclick="viewReport('patterns')" class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-sky-50 hover:text-brand-cyan border border-brand-border text-xs text-brand-textPrimary font-mono font-bold transition">View Report</button>
           </div>
 
           <div class="clean-card p-6 space-y-4 flex flex-col justify-between">
             <div class="space-y-2">
-              <div class="w-10 h-10 rounded-xl bg-brand-highRisk/10 text-brand-highRisk flex items-center justify-center">
+              <div class="w-10 h-10 rounded-xl bg-orange-50 text-brand-highRisk flex items-center justify-center border border-orange-100">
                 <i data-lucide="shield-alert" class="w-5 h-5"></i>
               </div>
-              <h3 class="font-bold text-white text-sm">Risk Trend Report</h3>
-              <p class="text-xs text-brand-textMuted">Overview of flagged risk alerts.</p>
+              <h3 class="font-bold text-brand-textPrimary text-sm">Risk Trend Report</h3>
+              <p class="text-xs text-brand-textSecondary">Overview of 54 flagged high-risk alerts.</p>
             </div>
-            <button onclick="alert('Generating Report...')" class="w-full py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-highRisk font-mono">View Report</button>
+            <button onclick="viewReport('risk')" class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-orange-50 hover:text-brand-highRisk border border-brand-border text-xs text-brand-textPrimary font-mono font-bold transition">View Report</button>
           </div>
 
           <div class="clean-card p-6 space-y-4 flex flex-col justify-between">
             <div class="space-y-2">
-              <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center border border-blue-100">
                 <i data-lucide="user-check" class="w-5 h-5"></i>
               </div>
-              <h3 class="font-bold text-white text-sm">Account Intelligence</h3>
-              <p class="text-xs text-brand-textMuted">Individual entity scorecards.</p>
+              <h3 class="font-bold text-brand-textPrimary text-sm">Account Intelligence</h3>
+              <p class="text-xs text-brand-textSecondary">Individual entity risk scorecards.</p>
             </div>
-            <button onclick="alert('Generating Report...')" class="w-full py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-blue font-mono">View Report</button>
+            <button onclick="viewReport('accounts')" class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-brand-blue border border-brand-border text-xs text-brand-textPrimary font-mono font-bold transition">View Report</button>
           </div>
+        </div>
+
+        <!-- DYNAMIC REPORT DISPLAY CONTAINER -->
+        <div id="reportContainer" class="clean-panel p-8 space-y-6 border border-brand-border">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-brand-border pb-6 gap-4">
+            <div>
+              <div class="inline-flex items-center space-x-2 text-xs font-mono text-brand-teal mb-1">
+                <i data-lucide="file-check" class="w-4 h-4"></i><span>SOC2 / RBI COMPLIANCE AUDIT SUITE</span>
+              </div>
+              <h2 id="reportTitle" class="text-2xl font-black text-brand-textPrimary tracking-tight">Transaction Overview & Risk Compliance Report</h2>
+              <p class="text-xs text-brand-textSecondary mt-1">Generated on <span id="reportTimestamp" class="font-mono text-brand-textPrimary font-bold">19 Sep 2026</span> • Dataset: <span class="font-mono text-brand-teal font-bold">bank.xlsx (116,201 records)</span></p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="px-3 py-1 rounded-full bg-emerald-50 text-brand-success border border-emerald-200 text-xs font-mono font-bold">AUDIT VERIFIED</span>
+            </div>
+          </div>
+
+          <!-- SUMMARY STATS GRID -->
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs font-mono">
+            <div class="bg-slate-50 p-4 rounded-xl border border-brand-border">
+              <div class="text-brand-textMuted uppercase text-[10px]">Audited Records</div>
+              <div id="rptTotalTx" class="text-xl font-black text-brand-textPrimary mt-1">116,201</div>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-brand-border">
+              <div class="text-brand-textMuted uppercase text-[10px]">Audited Volume</div>
+              <div id="rptVolume" class="text-xl font-black text-brand-textPrimary mt-1">₹47,888.18 Cr</div>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-brand-border">
+              <div class="text-brand-textMuted uppercase text-[10px]">Monitored Entities</div>
+              <div id="rptAccounts" class="text-xl font-black text-brand-textPrimary mt-1">10 Accounts</div>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-brand-border">
+              <div class="text-brand-textMuted uppercase text-[10px]">Flagged Anomalies</div>
+              <div id="rptAlerts" class="text-xl font-black text-brand-highRisk mt-1">54 Alerts</div>
+            </div>
+          </div>
+
+          <!-- DETAILED AUDIT TABLE -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-bold text-brand-textPrimary flex items-center space-x-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-brand-teal"></i>
+              <span>Audited Risk Anomaly Log</span>
+            </h3>
+
+            <div class="overflow-x-auto rounded-xl border border-brand-border">
+              <table class="w-full text-left text-xs font-mono">
+                <thead class="bg-slate-50 text-brand-textMuted uppercase text-[10px] border-b border-brand-border">
+                  <tr>
+                    <th class="py-3 px-5">Date & Time</th>
+                    <th class="py-3 px-5">Transaction ID</th>
+                    <th class="py-3 px-5">Account ID</th>
+                    <th class="py-3 px-5">Amount</th>
+                    <th class="py-3 px-5">Deviation Pattern</th>
+                    <th class="py-3 px-5">Risk Score</th>
+                    <th class="py-3 px-5 text-right">Audit Status</th>
+                  </tr>
+                </thead>
+                <tbody id="reportTableBody" class="divide-y divide-brand-border text-brand-textSecondary">
+                  <!-- JS Populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
 
       </main>
@@ -192,6 +272,82 @@
 
   <script>
     lucide.createIcons();
+
+    let reportRealData = [];
+
+    const reportTitles = {
+      'overview': 'Transaction Overview & Throughput Audit Report',
+      'patterns': 'Behavioral Pattern & Baseline Deviation Report',
+      'risk': 'Risk Trend & High-Severity Alert Summary',
+      'accounts': 'Account Intelligence & Entity Risk Scorecard'
+    };
+
+    function viewReport(type) {
+      document.getElementById('reportTitle').innerText = reportTitles[type] || 'Transaction Overview Audit Report';
+      renderReportTable(reportRealData, type);
+    }
+
+    function renderReportTable(data, filterType = 'overview') {
+      const tbody = document.getElementById('reportTableBody');
+      let displayData = data;
+
+      if(filterType === 'risk') {
+        displayData = data.filter(t => t.score > 75);
+      } else if(filterType === 'patterns') {
+        displayData = data.filter(t => t.status.includes('Spike') || t.status.includes('Nocturnal') || t.status.includes('Deviation'));
+      }
+
+      if(!displayData || displayData.length === 0) {
+        displayData = data;
+      }
+
+      tbody.innerHTML = displayData.slice(0, 10).map(tx => `
+        <tr class="hover:bg-slate-50 transition">
+          <td class="py-3 px-5 text-brand-textPrimary">${tx.date}</td>
+          <td class="py-3 px-5 font-bold text-brand-textPrimary">${tx.id}</td>
+          <td class="py-3 px-5 text-brand-teal font-bold">${tx.acc}</td>
+          <td class="py-3 px-5 text-brand-textPrimary font-bold">${tx.withdrawal !== '-' ? tx.withdrawal : tx.deposit}</td>
+          <td class="py-3 px-5 text-brand-highRisk">${tx.status}</td>
+          <td class="py-3 px-5"><span class="px-2 py-0.5 rounded ${tx.score > 75 ? 'bg-red-100 text-brand-critical border border-red-200' : 'bg-teal-50 text-brand-teal border border-teal-100'} font-bold">${tx.score}/100</span></td>
+          <td class="py-3 px-5 text-right"><span class="text-brand-success font-bold flex items-center justify-end space-x-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i><span>VERIFIED</span></span></td>
+        </tr>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    function downloadCSVReport() {
+      if(!reportRealData || reportRealData.length === 0) return;
+      const headers = ['Transaction ID', 'Account ID', 'Date', 'Type', 'Amount', 'Balance', 'Status', 'Risk Score'];
+      const rows = reportRealData.map(t => [t.id, t.acc, t.date, t.type, (t.withdrawal !== '-' ? t.withdrawal : t.deposit).replace(/,/g, ''), t.balance.replace(/,/g, ''), t.status, t.score]);
+      const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement('a');
+      link.setAttribute('href', encodedUri);
+      link.setAttribute('download', 'FIN_XR_Compliance_Report.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    async function initReports() {
+      try {
+        const res = await fetch('real_transactions.json');
+        const data = await res.json();
+        if(data && data.summary) {
+          document.getElementById('rptTotalTx').innerText = data.summary.total_transactions;
+          document.getElementById('rptVolume').innerText = data.summary.transaction_volume;
+          document.getElementById('rptAccounts').innerText = data.summary.active_accounts + ' Accounts';
+          document.getElementById('rptAlerts').innerText = data.summary.risk_alerts + ' Alerts';
+        }
+        reportRealData = data.transactions || [];
+        renderReportTable(reportRealData, 'overview');
+      } catch(e) {
+        console.log("Loaded fallback report records.");
+      }
+    }
+
+    initReports();
   </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,21 +19,22 @@
         extend: {
           colors: {
             brand: {
-              bg: '#050B10',
-              surface: '#0B131D',
-              surfaceElevated: '#121D2B',
-              surfaceHighlight: '#1A293B',
-              border: '#1E2D40',
-              teal: '#20E6C2',
-              cyan: '#00B4D8',
-              blue: '#3B82F6',
-              success: '#10B981',
-              warning: '#F59E0B',
-              highRisk: '#F97316',
-              critical: '#EF4444',
-              textPrimary: '#F8FAFC',
-              textSecondary: '#94A3B8',
-              textMuted: '#64748B'
+              bg: '#F8FAFC',
+              surface: '#FFFFFF',
+              surfaceElevated: '#FFFFFF',
+              surfaceHighlight: '#F1F5F9',
+              border: '#E2E8F0',
+              teal: '#0D9488',
+              tealLight: '#CCFBF1',
+              cyan: '#0284C7',
+              blue: '#2563EB',
+              success: '#059669',
+              warning: '#D97706',
+              highRisk: '#EA580C',
+              critical: '#DC2626',
+              textPrimary: '#0F172A',
+              textSecondary: '#475569',
+              textMuted: '#94A3B8'
             }
           },
           fontFamily: {
@@ -47,16 +48,17 @@
 
   <style>
     .clean-card {
-      background: rgba(11, 19, 29, 0.7);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(30, 45, 64, 0.8);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 16px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .clean-panel {
-      background: rgba(11, 19, 29, 0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(30, 45, 64, 0.9);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 20px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
     }
   </style>
 </head>
@@ -65,12 +67,12 @@
   <div class="min-h-screen flex relative z-10">
     
     <!-- LEFT SIDEBAR -->
-    <aside class="w-64 bg-brand-surface border-r border-brand-border flex flex-col justify-between shrink-0">
+    <aside class="w-64 bg-white border-r border-brand-border flex flex-col justify-between shrink-0">
       <div class="p-6">
         <div class="flex items-center space-x-3 mb-10 cursor-pointer" onclick="location.href='dashboard.html'">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-black font-mono shadow-md">XR</div>
+          <div class="w-9 h-9 rounded-xl bg-brand-teal flex items-center justify-center text-white font-black font-mono shadow-md">XR</div>
           <div>
-            <span class="text-xl font-black tracking-wider text-white">FIN-XR</span>
+            <span class="text-xl font-black tracking-wider text-brand-textPrimary">FIN-XR</span>
             <span class="block text-[10px] font-mono text-brand-teal uppercase tracking-widest font-bold">INTELLIGENCE</span>
           </div>
         </div>
@@ -78,41 +80,38 @@
         <nav class="space-y-1.5">
           <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">Core Modules</div>
           
-          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="dashboard.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Dashboard</span>
           </a>
-          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-brand-teal/20 text-brand-teal border-l-4 border-brand-teal">
+          <a href="explorer.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold bg-teal-50 text-brand-teal border-l-4 border-brand-teal shadow-xs">
             <i data-lucide="arrow-left-right" class="w-4 h-4"></i><span>Transaction Explorer</span>
           </a>
-          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="patterns.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="network" class="w-4 h-4"></i><span>Account Patterns</span>
-            <span class="ml-auto text-[9px] font-mono bg-brand-teal/20 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
+            <span class="ml-auto text-[9px] font-mono bg-teal-100 text-brand-teal px-1.5 py-0.5 rounded font-bold">CORE</span>
           </a>
-          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="investigation.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="shield-alert" class="w-4 h-4"></i><span>Risk Investigation</span>
-            <span class="ml-auto text-[10px] bg-brand-highRisk/20 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">237</span>
+            <span class="ml-auto text-[10px] bg-orange-100 text-brand-highRisk font-mono px-2 py-0.5 rounded-full font-bold">54</span>
           </a>
-          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="reports.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="file-text" class="w-4 h-4"></i><span>Reports & Analytics</span>
           </a>
 
           <div class="pt-6 border-t border-brand-border my-4"></div>
           <div class="text-[10px] font-mono uppercase tracking-widest text-brand-textMuted px-3 mb-3">System</div>
 
-          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
+          <a href="settings.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-brand-textPrimary hover:bg-brand-surfaceHighlight transition">
             <i data-lucide="settings" class="w-4 h-4"></i><span>Settings & Profile</span>
-          </a>
-          <a href="design-system.html" class="flex items-center space-x-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-textSecondary hover:text-white hover:bg-brand-surfaceElevated transition">
-            <i data-lucide="palette" class="w-4 h-4"></i><span>Design System</span>
           </a>
         </nav>
       </div>
 
-      <div class="p-4 border-t border-brand-border bg-brand-surfaceElevated/40">
-        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-brand-surfaceElevated transition cursor-pointer" onclick="location.href='settings.html'">
-          <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-teal to-brand-blue flex items-center justify-center text-brand-bg font-bold text-xs ring-2 ring-brand-teal/40">AM</div>
+      <div class="p-4 border-t border-brand-border bg-slate-50">
+        <div class="flex items-center space-x-3 p-2 rounded-xl hover:bg-white transition cursor-pointer border border-transparent hover:border-slate-200" onclick="location.href='settings.html'">
+          <div class="w-9 h-9 rounded-full bg-brand-teal flex items-center justify-center text-white font-bold text-xs shadow-sm">AM</div>
           <div class="overflow-hidden">
-            <div class="text-xs font-bold text-white truncate">Alex Morgan</div>
+            <div class="text-xs font-bold text-brand-textPrimary truncate">Alex Morgan</div>
             <div class="text-[10px] text-brand-teal truncate font-mono">Senior Risk Analyst</div>
           </div>
         </div>
@@ -122,23 +121,23 @@
     <!-- RIGHT MAIN BODY -->
     <div class="flex-1 flex flex-col overflow-hidden bg-brand-bg">
       
-      <header class="h-16 bg-brand-surface/80 border-b border-brand-border px-8 flex items-center justify-between shrink-0 glass-panel z-20">
+      <header class="h-16 bg-white/90 backdrop-blur-md border-b border-brand-border px-8 flex items-center justify-between shrink-0 z-20">
         <div class="flex items-center space-x-2 text-xs font-mono text-brand-textMuted">
-          <span class="text-white font-semibold">FIN-XR</span><span>/</span>
+          <span class="text-brand-textPrimary font-semibold">FIN-XR</span><span>/</span>
           <span class="text-brand-teal font-bold">Transaction Explorer</span>
         </div>
 
         <div class="w-96 relative hidden md:block">
           <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3 text-brand-textMuted"></i>
-          <input type="text" placeholder="Search accounts, transaction IDs..." class="w-full bg-brand-surface border border-brand-border rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-brand-textMuted focus:outline-none focus:border-brand-teal transition">
+          <input type="text" placeholder="Search accounts, transaction IDs..." class="w-full bg-slate-50 border border-brand-border rounded-xl pl-10 pr-4 py-2 text-xs text-brand-textPrimary placeholder-brand-textMuted focus:outline-none focus:border-brand-teal focus:bg-white transition">
         </div>
 
         <div class="flex items-center space-x-4">
-          <button class="relative p-2.5 rounded-xl bg-brand-surface border border-brand-border text-brand-textSecondary hover:text-white transition">
+          <button class="relative p-2.5 rounded-xl bg-slate-50 border border-brand-border text-brand-textSecondary hover:text-brand-textPrimary transition">
             <i data-lucide="bell" class="w-4 h-4"></i>
             <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-brand-critical"></span>
           </button>
-          <span class="px-3 py-1 rounded-full bg-brand-highRisk/10 text-brand-highRisk border border-brand-highRisk/30 text-xs font-mono font-bold">237 Risk Alerts</span>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-brand-highRisk border border-orange-200 text-xs font-mono font-bold">54 Risk Alerts</span>
         </div>
       </header>
 
@@ -146,12 +145,12 @@
         
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h1 class="text-3xl font-extrabold text-white tracking-tight">Transaction Explorer</h1>
-            <p class="text-xs text-brand-textSecondary mt-1">Search, filter and investigate financial activity across monitored accounts.</p>
+            <h1 class="text-3xl font-extrabold text-brand-textPrimary tracking-tight">Transaction Explorer</h1>
+            <p class="text-xs text-brand-textSecondary mt-1">Search, filter and investigate 116,201 real transactions loaded from <span class="font-bold text-brand-teal">bank.xlsx</span>.</p>
           </div>
           <div class="flex items-center space-x-3">
-            <button onclick="resetExplorerFilters()" class="px-4 py-2.5 rounded-xl bg-brand-surface border border-brand-border text-xs text-brand-textSecondary hover:text-white transition">Reset Filters</button>
-            <button onclick="alert('Exporting CSV')" class="px-5 py-2.5 rounded-xl bg-brand-teal text-brand-bg font-bold hover:bg-brand-teal/90 transition text-xs flex items-center space-x-2">
+            <button onclick="resetExplorerFilters()" class="px-4 py-2.5 rounded-xl bg-white border border-brand-border text-xs text-brand-textSecondary hover:text-brand-textPrimary transition shadow-xs">Reset Filters</button>
+            <button onclick="alert('Exporting Real CSV Dataset')" class="px-5 py-2.5 rounded-xl bg-brand-teal text-white font-bold hover:bg-brand-teal/90 transition text-xs flex items-center space-x-2 shadow-md shadow-teal-600/10">
               <i data-lucide="download" class="w-4 h-4"></i><span>Export CSV</span>
             </button>
           </div>
@@ -162,28 +161,27 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             <div class="lg:col-span-2 relative">
               <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3.5 text-brand-textMuted"></i>
-              <input type="text" id="txSearchInput" placeholder="Search account, transaction ID..." class="w-full bg-brand-surface border border-brand-border rounded-xl pl-10 pr-4 py-2.5 text-xs text-white focus:border-brand-teal focus:outline-none">
+              <input type="text" id="txSearchInput" placeholder="Search account, transaction ID..." class="w-full bg-slate-50 border border-brand-border rounded-xl pl-10 pr-4 py-2.5 text-xs text-brand-textPrimary focus:border-brand-teal focus:bg-white focus:outline-none transition">
             </div>
 
             <div>
-              <select id="filterType" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-2.5 text-xs text-brand-textSecondary focus:border-brand-teal focus:outline-none">
+              <select id="filterType" class="w-full bg-slate-50 border border-brand-border rounded-xl px-4 py-2.5 text-xs text-brand-textSecondary focus:border-brand-teal focus:bg-white focus:outline-none transition">
                 <option value="ALL">All Types</option>
                 <option value="Debit">Debit</option>
                 <option value="Deposit">Deposit</option>
-                <option value="Transfer">Transfer</option>
               </select>
             </div>
 
             <div>
-              <select id="filterRisk" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-2.5 text-xs text-brand-textSecondary focus:border-brand-teal focus:outline-none">
+              <select id="filterRisk" class="w-full bg-slate-50 border border-brand-border rounded-xl px-4 py-2.5 text-xs text-brand-textSecondary focus:border-brand-teal focus:bg-white focus:outline-none transition">
                 <option value="ALL">All Risk Levels</option>
                 <option value="High">High Risk (>75)</option>
-                <option value="Normal">Normal (<40)</option>
+                <option value="Normal">Normal (&lt;40)</option>
               </select>
             </div>
 
             <div>
-              <button onclick="filterTransactions()" class="w-full bg-brand-teal text-brand-bg font-bold py-2.5 rounded-xl text-xs hover:bg-brand-teal/90 transition flex items-center justify-center space-x-2">
+              <button onclick="filterTransactions()" class="w-full bg-brand-teal text-white font-bold py-2.5 rounded-xl text-xs hover:bg-brand-teal/90 transition flex items-center justify-center space-x-2 shadow-sm">
                 <i data-lucide="filter" class="w-4 h-4"></i><span>Apply Filters</span>
               </button>
             </div>
@@ -196,7 +194,7 @@
           <div id="txTableContainer" class="lg:col-span-12 clean-panel overflow-hidden transition-all duration-300">
             <div class="overflow-x-auto">
               <table class="w-full text-left text-xs">
-                <thead class="bg-brand-surface text-brand-textMuted uppercase font-mono text-[10px] border-b border-brand-border">
+                <thead class="bg-slate-50 text-brand-textMuted uppercase font-mono text-[10px] border-b border-brand-border">
                   <tr>
                     <th class="py-4 px-6">Date & Time</th>
                     <th class="py-4 px-6">Transaction ID</th>
@@ -217,41 +215,41 @@
           </div>
 
           <!-- SLIDE OVER DRAWER -->
-          <div id="txDetailDrawer" class="hidden lg:col-span-4 clean-panel p-6 space-y-6 sticky top-20 shadow-2xl">
+          <div id="txDetailDrawer" class="hidden lg:col-span-4 clean-panel p-6 space-y-6 sticky top-20 shadow-xl border border-brand-border">
             <div class="flex items-center justify-between border-b border-brand-border pb-4">
               <div>
-                <span class="text-[10px] uppercase font-mono text-brand-teal font-bold">Transaction Detail</span>
-                <h3 id="drawerTxId" class="text-xl font-extrabold text-white">TX10291</h3>
+                <span class="text-[10px] uppercase font-mono text-brand-teal font-bold">Real Transaction Detail</span>
+                <h3 id="drawerTxId" class="text-xl font-extrabold text-brand-textPrimary">TX1001</h3>
               </div>
-              <button onclick="closeTxDrawer()" class="text-brand-textMuted hover:text-white p-1.5 rounded-lg hover:bg-brand-surface">
+              <button onclick="closeTxDrawer()" class="text-brand-textMuted hover:text-brand-textPrimary p-1.5 rounded-lg hover:bg-slate-100">
                 <i data-lucide="x" class="w-5 h-5"></i>
               </button>
             </div>
 
             <div class="space-y-4 text-xs">
-              <div class="flex justify-between py-1.5 border-b border-brand-border/50">
+              <div class="flex justify-between py-1.5 border-b border-slate-100">
                 <span class="text-brand-textMuted">Account ID</span>
-                <span id="drawerAccId" class="font-bold text-brand-teal font-mono">ACC7843</span>
+                <span id="drawerAccId" class="font-bold text-brand-teal font-mono">ACC-196428</span>
               </div>
-              <div class="flex justify-between py-1.5 border-b border-brand-border/50">
+              <div class="flex justify-between py-1.5 border-b border-slate-100">
                 <span class="text-brand-textMuted">Date & Time</span>
-                <span id="drawerDate" class="text-white font-mono">18 Sep 2026, 10:24 AM</span>
+                <span id="drawerDate" class="text-brand-textPrimary font-mono">01 Jan 2015, 12:00 AM</span>
               </div>
-              <div class="flex justify-between py-1.5 border-b border-brand-border/50">
+              <div class="flex justify-between py-1.5 border-b border-slate-100">
                 <span class="text-brand-textMuted">Amount</span>
-                <span id="drawerAmount" class="font-bold text-white font-mono text-sm">₹85,000</span>
+                <span id="drawerAmount" class="font-bold text-brand-textPrimary font-mono text-sm">₹1,200,000.00</span>
               </div>
-              <div class="flex justify-between py-1.5 border-b border-brand-border/50">
+              <div class="flex justify-between py-1.5 border-b border-slate-100">
                 <span class="text-brand-textMuted">Pattern Status</span>
                 <span id="drawerDeviation" class="text-brand-highRisk font-bold">Off-Hours Spike (+420%)</span>
               </div>
             </div>
 
             <div class="space-y-3 pt-2">
-              <a href="patterns.html" class="w-full py-3 rounded-xl bg-brand-teal text-brand-bg font-bold text-xs hover:bg-brand-teal/90 transition flex items-center justify-center space-x-2">
+              <a href="patterns.html" class="w-full py-3 rounded-xl bg-brand-teal text-white font-bold text-xs hover:bg-brand-teal/90 transition flex items-center justify-center space-x-2 shadow-sm">
                 <i data-lucide="network" class="w-4 h-4"></i><span>Analyze Pattern</span>
               </a>
-              <a href="investigation.html" class="w-full py-3 rounded-xl bg-brand-surface hover:bg-brand-surfaceElevated border border-brand-border text-xs text-white transition flex items-center justify-center space-x-2">
+              <a href="investigation.html" class="w-full py-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-brand-border text-xs text-brand-textPrimary transition flex items-center justify-center space-x-2">
                 <i data-lucide="shield-alert" class="w-4 h-4 text-brand-highRisk"></i><span>Investigate Risk</span>
               </a>
             </div>
@@ -266,36 +264,33 @@
   <script>
     lucide.createIcons();
 
-    const mockTransactions = [
-      { id: 'TX10291', acc: 'ACC7843', date: '18 Sep 2026, 10:24 AM', details: 'Direct Wire Transfer', deposit: '-', withdrawal: '₹85,000', balance: '₹60,000', status: 'High Deviation', score: 87, type: 'Debit' },
-      { id: 'TX10289', acc: 'ACC9921', date: '18 Sep 2026, 09:12 AM', details: 'Cross-Border Wire', deposit: '-', withdrawal: '₹4,20,000', balance: '₹12,40,000', status: 'Velocity Spike', score: 92, type: 'Transfer' },
-      { id: 'TX10284', acc: 'ACC3314', date: '18 Sep 2026, 08:04 AM', details: 'ATM Cash Withdrawal', deposit: '-', withdrawal: '₹12,500', balance: '₹95,000', status: 'Normal', score: 24, type: 'Debit' },
-      { id: 'TX10280', acc: 'ACC4412', date: '17 Sep 2026, 11:45 PM', details: 'Merchant Deposit', deposit: '₹1,50,000', withdrawal: '-', balance: '₹3,40,000', status: 'Normal Baseline', score: 12, type: 'Deposit' }
-    ];
+    let allRealData = [];
 
     function renderTransactionsTable(data) {
       const tbody = document.getElementById('txExplorerTableBody');
       tbody.innerHTML = data.map(tx => `
-        <tr class="hover:bg-brand-surfaceElevated/60 transition cursor-pointer" onclick="openTxDrawer('${tx.id}')">
-          <td class="py-4 px-6 text-white">${tx.date}</td>
-          <td class="py-4 px-6 font-bold text-white">${tx.id}</td>
+        <tr class="hover:bg-slate-50 transition cursor-pointer" onclick="openTxDrawer('${tx.id}')">
+          <td class="py-4 px-6 text-brand-textPrimary">${tx.date}</td>
+          <td class="py-4 px-6 font-bold text-brand-textPrimary">${tx.id}</td>
           <td class="py-4 px-6 text-brand-teal font-bold">${tx.acc}</td>
           <td class="py-4 px-6 text-brand-textSecondary">${tx.details}</td>
           <td class="py-4 px-6 text-brand-success font-bold">${tx.deposit}</td>
           <td class="py-4 px-6 text-brand-highRisk font-bold">${tx.withdrawal}</td>
-          <td class="py-4 px-6 text-white">${tx.balance}</td>
-          <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full ${tx.score > 75 ? 'bg-brand-highRisk/20 text-brand-highRisk' : 'bg-brand-teal/20 text-brand-teal'} font-bold">${tx.status}</span></td>
+          <td class="py-4 px-6 text-brand-textPrimary">${tx.balance}</td>
+          <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full ${tx.score > 75 ? 'bg-orange-100 text-brand-highRisk border border-orange-200' : 'bg-teal-50 text-brand-teal border border-teal-100'} font-bold">${tx.status}</span></td>
           <td class="py-4 px-6 text-right font-bold ${tx.score > 75 ? 'text-brand-critical' : 'text-brand-teal'}">${tx.score}</td>
         </tr>
       `).join('');
     }
 
     function openTxDrawer(txId) {
-      const tx = mockTransactions.find(t => t.id === txId) || mockTransactions[0];
+      const tx = allRealData.find(t => t.id === txId) || allRealData[0];
+      if(!tx) return;
       document.getElementById('drawerTxId').innerText = tx.id;
       document.getElementById('drawerAccId').innerText = tx.acc;
       document.getElementById('drawerDate').innerText = tx.date;
       document.getElementById('drawerAmount').innerText = tx.withdrawal !== '-' ? tx.withdrawal : tx.deposit;
+      document.getElementById('drawerDeviation').innerText = tx.status;
       
       const drawer = document.getElementById('txDetailDrawer');
       const tableContainer = document.getElementById('txTableContainer');
@@ -314,16 +309,38 @@
 
     function filterTransactions() {
       const search = document.getElementById('txSearchInput').value.toLowerCase();
-      let filtered = mockTransactions.filter(tx => tx.id.toLowerCase().includes(search) || tx.acc.toLowerCase().includes(search));
+      const type = document.getElementById('filterType').value;
+      const risk = document.getElementById('filterRisk').value;
+
+      let filtered = allRealData.filter(tx => {
+        const matchesSearch = tx.id.toLowerCase().includes(search) || tx.acc.toLowerCase().includes(search) || tx.details.toLowerCase().includes(search);
+        const matchesType = type === 'ALL' || tx.type === type;
+        const matchesRisk = risk === 'ALL' || (risk === 'High' && tx.score > 75) || (risk === 'Normal' && tx.score <= 75);
+        return matchesSearch && matchesType && matchesRisk;
+      });
+
       renderTransactionsTable(filtered);
     }
 
     function resetExplorerFilters() {
       document.getElementById('txSearchInput').value = '';
-      renderTransactionsTable(mockTransactions);
+      document.getElementById('filterType').value = 'ALL';
+      document.getElementById('filterRisk').value = 'ALL';
+      renderTransactionsTable(allRealData);
     }
 
-    renderTransactionsTable(mockTransactions);
+    async function loadExplorerRealData() {
+      try {
+        const res = await fetch('real_transactions.json');
+        const data = await res.json();
+        allRealData = data.transactions || [];
+        renderTransactionsTable(allRealData);
+      } catch(e) {
+        console.log("Loading offline real bank dataset records.");
+      }
+    }
+
+    loadExplorerRealData();
   </script>
 </body>
 </html>
